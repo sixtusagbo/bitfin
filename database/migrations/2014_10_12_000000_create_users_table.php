@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('secret_question');
             $table->string('secret_answer');
-            $table->string('btc_address');
-            $table->string('eth_address');
+            $table->string('btc_address')->nullable();
+            $table->string('eth_address')->nullable();
             $table->tinyInteger('type')->default(0);
             $table->timestamp('last_access')->nullable();
             // Setting up a self-referencing table for referrals
