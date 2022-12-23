@@ -93,6 +93,16 @@ class User extends Authenticatable
      */
     public function payments()
     {
-        return $this->hasMany(UserPayments::class);
+        return $this->hasMany(Payment::class);
+    }
+
+    /**
+     * A user has many withdrawals.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function withdrawals()
+    {
+        return $this->hasMany(Withdrawal::class);
     }
 }

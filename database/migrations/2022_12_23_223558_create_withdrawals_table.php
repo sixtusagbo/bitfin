@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('withdrawals', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('payment_wallet_id');
-            $table->foreign('payment_wallet_id')->references('id')->on('payment_wallets');
-            $table->bigInteger('plan_id');
-            $table->foreign('plan_id')->references('id')->on('plans');
             $table->decimal('amount');
-            $table->tinyInteger('status')->default(0)->comment('0-pending, 1-approved(i.e running), 2-completed');
+            // ? 0- Pending, 1 - Confirmed
+            $table->tinyInteger('status')->default(0)->comment('0-pending, 1-confirmed');
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('withdrawals');
     }
 };
