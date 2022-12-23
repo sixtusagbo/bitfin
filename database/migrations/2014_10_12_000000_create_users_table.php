@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('btc_address');
             $table->string('eth_address');
             $table->tinyInteger('type')->default(0);
-            $table->timestamp('last_login')->nullable();
-            $table->string('last_login_ip')->nullable();
+            $table->timestamp('last_access')->nullable();
             // Setting up a self-referencing table for referrals
             $table->unsignedBigInteger('referrer_id')->nullable();
             $table->foreign('referrer_id')->references('id')->on('users');
