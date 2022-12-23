@@ -14,4 +14,14 @@ class PaymentWallet extends Model
         'network',
         'address',
     ];
+
+    /**
+     * A wallet address has many payments.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

@@ -85,4 +85,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(User::class, 'referrer_id', 'id');
     }
+
+    /**
+     * A user has many payments.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function payments()
+    {
+        return $this->hasMany(UserPayments::class);
+    }
 }
