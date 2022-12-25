@@ -14,7 +14,7 @@
     <meta name="language" content="English">
     <meta name="author" content="Bit-fin.biz">
 
-    <title>Bitcoin Financial Ltd Company</title>
+    <title>Bitcoin Financial Ltd</title>
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
     <meta property="og:title" content="Bitcoin Financial Ltd">
@@ -239,7 +239,7 @@
             style="padding:12px 25px; margin-top: 0; margin-left: 10px; background: #0B0E11;">Register</a>
     </div>
 
-    {{-- Other Scripts Start --}}
+    <!-- Other Scripts Start -->
 
     <script src="{{ asset('js/lib/jquery-3.3.1/jquery.min.js') }}" type="text/javascript"></script>
     <script type="text/javascript" charset="UTF-8"
@@ -262,7 +262,7 @@
         defer></script>
     <script src="{{ asset('js/lib/jquery.fancybox.min.js') }}" type="text/javascript"></script>
 
-    {{-- Other Scripts End --}}
+    <!-- Other Scripts End -->
 
     <script type="text/javascript">
         $('#popup-modal').modal('show');
