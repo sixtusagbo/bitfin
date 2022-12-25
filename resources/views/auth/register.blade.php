@@ -158,8 +158,8 @@
                                     <td>
                                         <input id="btc_address" type="text"
                                             class="form-control @error('btc_address') is-invalid @enderror"
-                                            name="btc_address" value="{{ old('btc_address') }}" required
-                                            autocomplete="btc_address" autofocus>
+                                            name="btc_address" value="{{ old('btc_address') }}" autocomplete="btc_address"
+                                            autofocus>
 
                                         @error('btc_address')
                                             <span class="invalid-feedback" role="alert">
@@ -175,8 +175,8 @@
                                     <td>
                                         <input id="eth_address" type="text"
                                             class="form-control @error('eth_address') is-invalid @enderror"
-                                            name="eth_address" value="{{ old('eth_address') }}" required
-                                            autocomplete="eth_address" autofocus>
+                                            name="eth_address" value="{{ old('eth_address') }}" autocomplete="eth_address"
+                                            autofocus>
 
                                         @error('eth_address')
                                             <span class="invalid-feedback" role="alert">
@@ -190,7 +190,7 @@
                                         &nbsp;
                                     </td>
                                     <td>
-                                        <input type=checkbox name=agree value=1>
+                                        <input type="checkbox" required>
                                         I agree with
                                         <a class="small_text" href="{{ url('/rules') }}">
                                             Terms and conditions

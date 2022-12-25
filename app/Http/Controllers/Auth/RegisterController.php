@@ -69,11 +69,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users', 'confirmed'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'username' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
             'secret_question' => ['required', 'string', 'max:255'],
             'secret_answer' => ['required', 'string', 'max:255'],
-            'btc_address' => ['required', 'string', 'max:255'],
-            'eth_address' => ['required', 'string', 'max:255'],
         ]);
     }
 
