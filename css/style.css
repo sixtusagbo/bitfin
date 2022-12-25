@@ -1,0 +1,417 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header {
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
+#google_translate_element {
+    background-color:lightgreen;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+  }
+  #dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    text-decoration: none;
+    display: block;
+    color: gray;
+  }
+  .dropdown-content a:hover {
+    background-color: lightgreen;
+  }
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+#logo {
+    height: 100px;
+}
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+.nav-link:hover {
+    color: goldenrod;
+}
+.nav-sub {
+    display: flex;
+    list-style-type: none;
+    position: relative;
+    top: 50px;
+}
+.list-item {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+#btn {
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+}
+.line {
+    width: 45px;
+    height: 3px;
+    background-color: lightgreen;
+}
+.ham{
+    display:none;
+    padding:5px;
+    cursor:pointer;
+    }
+    .bar1,.bar2,.bar3{
+    display:block;
+    width:35px;
+    height:3px;
+    margin:5px auto;
+    background-color:#101010;
+    transition: 0.4s;
+    position: relative;
+    top: 20px;
+    }
+.text-one {
+    left: 50%;
+    top: 50%;
+    position: relative;
+    width: 400px;
+    color: white;
+    animation-name: text;
+    animation-duration: 5s;
+}
+@keyframes text {
+     from {
+    left: 0%;
+     }
+     to{
+        bottom: 50%;
+     }
+}
+.main{
+    width:100%;
+    height:100vh;
+    margin: 0 auto;
+  }
+  .slider-outer{
+     height:100% !important;
+     
+    overflow:hidden;
+  }
+  .slider{
+   
+      width: 100%;
+      height: 100%;
+      
+  }
+  .slide-image{
+    width: 100%;
+      height: 100%;
+     display:block;
+      color: transparent;
+      background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      -o-background-size: cover;
+      -webkit-background-size: cover;
+      background-position: center;
+      background-repeat: none;
+  }
+  .slider .slide-item{
+    float:right;
+      padding: 0;
+      margin: 0;
+  }
+  .clear{
+    clear:both;
+  }
+#frame {
+    width: 100%;
+    height: 70px;
+    border: none;
+    background-color: green;
+}
+.about {
+    background-color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+#hidden {
+    background-color: brown;
+    width: 490px;
+    height: 400px;
+    visibility: hidden;
+}
+#about-contanier {
+    width: 490px;
+}
+#about-contanier h2 {
+    color: rgb(65, 173, 65);
+}
+#about-contanier p {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: gray;
+}
+#about-contanier a {
+    text-decoration: none;
+    background-color: lightgreen;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    border-radius: 5px;
+}
+.about-divs {
+    margin: 5px auto ;
+}
+.plan-holder {
+    background-color: whitesmoke;
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.pl h5 {
+    color: green;
+}
+.pl {
+    text-align: center;
+    padding: 20px;
+    padding: 20px;
+}
+.plan {
+    background-color: lightgreen;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+.plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.plan-boxs {
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    background-image: url("/images/plan-bg.svg");
+    background-color: rgb(29, 28, 28);
+    background-size: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+
+}
+.plan-details{
+    color: white;
+    display: grid;
+    justify-content: center;
+    padding-top: 50px;
+}
+.plan-details p {
+    padding: 10px;
+}
+.profit-p {
+    font-style: italic;
+}
+.plan-btn{
+    background-color: transparent;
+    border: 2px solid ;
+    padding: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 3px;
+
+}
+.plan-btn:hover {
+    background-color: lightgreen;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid lightgreen;
+}
+#hide-plan {
+    visibility: hidden;
+}
+.ref {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.ref-checker {
+    background-color: lightgreen;
+    border-radius: 5px;
+    width: 630px;
+    height: 150px;
+    margin: 10px;
+    display: grid;
+    justify-content: center;
+}
+.ref-checker img {
+    height: 50px;
+    position: relative;
+    top: 40px;
+    left: 70px;
+}
+.key {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.plan-key {
+    width: 81%;
+    height: 250px;
+    background-image: url("/images/pay-opts.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    color: white;
+}
+.plan-key h2 {
+    text-align: center;
+    padding-top: 10px;
+}
+.thick {
+    height: 15px;
+}
+.display-Thick {
+    display: inline-flex;
+}
+.display-Thick h2 {
+    font-size: 20px;
+}
+.plan-key-divs {
+    margin: 20px;
+}
+.key-divs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding-top: 50px;
+}
+/* .calculator {
+    background-color: whitesmoke;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 100px;
+} */
+.calculator h5 {
+    text-align: center;
+    color: green;
+    padding-top: 30px;
+}
+.calculator h2 {
+    text-align: center;
+}
+.mining-team {
+    background-color: black;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    #logo {
+        height: 60px;
+    }
+    .ham{
+        display:block;
+        }
+        .change .bar1 {
+        transform: rotate(45deg) translate(8px,3px);
+        }
+        .change .bar2 {
+        opacity: 0;
+        }
+        .change .bar3 {
+        transform: rotate(-45deg) translate(8px,-3px);
+        }
+    .nav-sub {
+        position:absolute;
+        top:9vh;
+        right:0px;
+        padding: 50px;
+        height: 100vh;
+        flex-direction:column;
+        background-color:rgb(0,0,0,0.75);
+        border-radius:0px 0px 0px 20px;
+        transition:transform 0.3s ease-in;
+        transform:translate(100%);
+    }
+    .nav-change{
+        transform:translate(0%);
+        }
+        #btn {
+            background-color: transparent;
+            padding: 0px;
+            border-radius: 0px;
+            color: white;
+        }
+        .nav-link {
+            color: white;
+        }
+        .line {
+            display: none;
+        }
+    .text-one{
+        width: 300px;
+        left: 180px;
+        top: 50%;
+        position: absolute; 
+    }
+    .text-one h1{
+        font-size: 30px;
+        color: white;
+    }
+    #hidden {
+        display: none;
+    }
+    #about-contanier {
+        text-align: center;
+        width: 400px;
+    }
+    #hide-plan {
+        display: none;
+    }
+    .key-divs {
+        display: block;
+        padding: 0px;
+    }
+    .plan-key-divs {
+        padding-top: 20px;
+        margin: 2px;
+    }
+    
+}
