@@ -114,7 +114,8 @@
                                 id="forex_trading" href="{{ route('forex_trading') }}">Forex Trading</a>
                             <a class="dropdown-item @if (Request::is('commitments')) active @endif" id="commitments"
                                 href="{{ route('commitments') }}">Commitments</a>
-                            <a class="dropdown-item" id="stratagies" href="stratagies">Strategies</a>
+                            <a class="dropdown-item @if (Request::is('stratagies')) active @endif" id="stratagies"
+                                href="{{ route('stratagies') }}">Strategies</a>
                         </div>
                     </li>
                     <li class="nav-item" id="affiliate">
@@ -193,7 +194,7 @@
 
                         <li><a href="{{ route('forex_trading') }}">Forex Trading</a></li>
                         <li><a href="{{ route('commitments') }}">Commitments</a></li>
-                        <li><a href="stratagies">Strategies</a></li>
+                        <li><a href="{{ route('stratagies') }}">Strategies</a></li>
                     </ul>
 
                 </div>

@@ -60,4 +60,14 @@ class CoreController extends Controller
     {
         return view('core.commitments');
     }
+
+    /**
+     * Display the stratagies page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function stratagies()
+    {
+        return view('core.stratagies');
+    }
 }
