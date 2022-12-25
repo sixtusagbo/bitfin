@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CoreController;
+use App\Http\Controllers\DashController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,9 @@ Route::get('/faq', [CoreController::class, 'faq'])->name('faq');
 Route::get('/contact', [CoreController::class, 'contact'])->name('contact');
 Route::get('/security', [CoreController::class, 'security'])->name('security');
 Route::get('/terms_and_conditions', [CoreController::class, 'terms'])->name('terms');
+
+Route::get('/rules', [DashController::class, 'rules'])->name('rules');
+Route::get('/support', [DashController::class, 'support'])->name('support');
 
 Auth::routes();
 
