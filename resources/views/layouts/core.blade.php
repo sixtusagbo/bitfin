@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/core.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style3d22.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ion.rangeSlider.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
