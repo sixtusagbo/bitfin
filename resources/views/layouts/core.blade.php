@@ -112,7 +112,8 @@
 
                             <a class="dropdown-item @if (Request::is('forex_trading')) active @endif"
                                 id="forex_trading" href="{{ route('forex_trading') }}">Forex Trading</a>
-                            <a class="dropdown-item" id="commitments" href="commitments">Commitments</a>
+                            <a class="dropdown-item @if (Request::is('commitments')) active @endif" id="commitments"
+                                href="{{ route('commitments') }}">Commitments</a>
                             <a class="dropdown-item" id="stratagies" href="stratagies">Strategies</a>
                         </div>
                     </li>
@@ -190,7 +191,8 @@
                         <li><a href="{{ route('about') }}">About us</a></li>
                         <li><a href="{{ route('why_us') }}">Why Choose Us</a></li>
 
-                        <li><a href="commitments">Commitments</a></li>
+                        <li><a href="{{ route('forex_trading') }}">Forex Trading</a></li>
+                        <li><a href="{{ route('commitments') }}">Commitments</a></li>
                         <li><a href="stratagies">Strategies</a></li>
                     </ul>
 

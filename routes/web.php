@@ -19,6 +19,7 @@ Route::get('/', [CoreController::class, 'index']);
 Route::get('/about', [CoreController::class, 'about'])->name('about');
 Route::get('/why_us', [CoreController::class, 'why_us'])->name('why_us');
 Route::get('/forex_trading', [CoreController::class, 'forex_trading'])->name('forex_trading');
+Route::get('/commitments', [CoreController::class, 'commitments'])->name('commitments');
 
 Auth::routes();
 

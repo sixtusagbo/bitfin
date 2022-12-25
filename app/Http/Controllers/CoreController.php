@@ -50,4 +50,14 @@ class CoreController extends Controller
     {
         return view('core.forex_trading');
     }
+
+    /**
+     * Display the commitments page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function commitments()
+    {
+        return view('core.commitments');
+    }
 }
