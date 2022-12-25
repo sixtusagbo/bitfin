@@ -72,7 +72,7 @@
 
                                 <tr>
                                     <td>
-                                        <input type=submit value="Login" class=sbmt>
+                                        <input type=submit value="Login" class="sbmt">
 
                                         @if (Route::has('password.request'))
                                             <span class="loginbottom">

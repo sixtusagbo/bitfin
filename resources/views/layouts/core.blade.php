@@ -12,7 +12,7 @@
     <meta name="keywords" content="crypto, mining, service, bitcoin, ethereum">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
-    <meta name="author" content="Bit-fin.biz">
+    <meta name="author" content="Bit-fin.co">
 
     <title>Bitcoin Financial Ltd</title>
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
