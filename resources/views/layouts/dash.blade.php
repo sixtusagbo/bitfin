@@ -93,17 +93,41 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="loginarea">
-                                <div class="login hvr-backward fadeInLeft wow">
-                                    <a href="{{ route('login') }}"><span class="icon"><img
-                                                src="{{ asset('images/auth/loginicon.png') }}" alt=""></span>
-                                        member login</a>
-                                </div>
-                                <div class="signup hvr-backward fadeInLeft wow">
-                                    <a href="{{ route('register') }}"><span class="icon"><img
-                                                src="{{ asset('images/auth/signupicon.png') }}" alt=""></span>
-                                        open
-                                        account</a>
-                                </div>
+                                @auth
+                                    <div class="login hvr-backward fadeInLeft wow">
+                                        <a href="{{ route('home') }}">
+                                            <span class="icon">
+                                                <img src="{{ asset('images/auth/loginicon.png') }}" alt="">
+                                            </span>dashboard</a>
+                                    </div>
+                                    <div class="signup hvr-backward fadeInLeft wow">
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            <span class="icon">
+                                                <img src="{{ asset('images/auth/signupicon.png') }}" alt="">
+                                            </span>logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                @else
+                                    <div class="login hvr-backward fadeInLeft wow">
+                                        <a href="{{ route('login') }}"><span class="icon"><img
+                                                    src="{{ asset('images/auth/loginicon.png') }}" alt=""></span>
+                                            member login</a>
+                                    </div>
+                                    <div class="signup hvr-backward fadeInLeft wow">
+                                        <a href="{{ route('register') }}"><span class="icon"><img
+                                                    src="{{ asset('images/auth/signupicon.png') }}"
+                                                    alt=""></span>
+                                            open
+                                            account</a>
+                                    </div>
+                                @endauth
                             </div>
                         </div>
                     </div>
