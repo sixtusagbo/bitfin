@@ -70,4 +70,14 @@ class CoreController extends Controller
     {
         return view('core.stratagies');
     }
+
+    /**
+     * Display the affiliate page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function affiliate()
+    {
+        return view('core.affiliate');
+    }
 }

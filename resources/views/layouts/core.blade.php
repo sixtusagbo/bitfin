@@ -118,8 +118,8 @@
                                 href="{{ route('stratagies') }}">Strategies</a>
                         </div>
                     </li>
-                    <li class="nav-item" id="affiliate">
-                        <a class="nav-link" href="affiliate">Affiliate</a>
+                    <li class="nav-item @if (Request::is('affiliate')) active @endif" id="affiliate">
+                        <a class="nav-link" href="{{ route('affiliate') }}">Affiliate</a>
                     </li>
 
                     <li class="nav-item" id="faq">
@@ -180,7 +180,7 @@
                     <h4>Quick Links</h4>
                     <ul>
 
-                        <li><a href="affiliate">Affiliate</a></li>
+                        <li><a href="{{ route('affiliate') }}">Affiliate</a></li>
                         <li><a href="faq">FAQ</a></li>
                         <li><a href="contact">Contact</a></li>
                     </ul>

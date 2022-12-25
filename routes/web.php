@@ -21,6 +21,7 @@ Route::get('/why_us', [CoreController::class, 'why_us'])->name('why_us');
 Route::get('/forex_trading', [CoreController::class, 'forex_trading'])->name('forex_trading');
 Route::get('/commitments', [CoreController::class, 'commitments'])->name('commitments');
 Route::get('/stratagies', [CoreController::class, 'stratagies'])->name('stratagies');
+Route::get('/affiliate', [CoreController::class, 'affiliate'])->name('affiliate');
 
 Auth::routes();
 
