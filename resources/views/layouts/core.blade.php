@@ -201,7 +201,7 @@
                 <div class="col-md-3">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="security">Security Information</a></li>
+                        <li><a href="{{ route('security') }}">Security Information</a></li>
 
                         <li><a href="terms_and_conditions">Terms &amp; Conditions</a></li>
                     </ul>

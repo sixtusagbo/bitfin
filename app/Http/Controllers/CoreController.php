@@ -100,4 +100,14 @@ class CoreController extends Controller
     {
         return view('core.contact');
     }
+
+    /**
+     * Display the security page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function security()
+    {
+        return view('core.security');
+    }
 }
