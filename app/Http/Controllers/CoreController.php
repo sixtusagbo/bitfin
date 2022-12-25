@@ -110,4 +110,14 @@ class CoreController extends Controller
     {
         return view('core.security');
     }
+
+    /**
+     * Display the terms page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function terms()
+    {
+        return view('core.terms');
+    }
 }

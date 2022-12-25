@@ -203,10 +203,11 @@
                     <ul>
                         <li><a href="{{ route('security') }}">Security Information</a></li>
 
-                        <li><a href="terms_and_conditions">Terms &amp; Conditions</a></li>
+                        <li><a href="{{ route('terms') }}">Terms &amp; Conditions</a></li>
                     </ul>
                     <div class="mt-3">
-                        <a href="#" title="DMCA.com Protection Status" class="dmca-badge" target="_blank">
+                        <a href="https://www.dmca.com/site-report/www.richnetfunds.com"
+                            title="DMCA.com Protection Status" class="dmca-badge" target="_blank">
                             <img src="{{ asset('images/dmca.png') }}" alt="DMCA.com Protection Status"
                                 width="100px"></a>
                     </div>
