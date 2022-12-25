@@ -122,8 +122,8 @@
                         <a class="nav-link" href="{{ route('affiliate') }}">Affiliate</a>
                     </li>
 
-                    <li class="nav-item" id="faq">
-                        <a class="nav-link" href="faq">FAQ</a>
+                    <li class="nav-item @if (Request::is('faq')) active @endif" id="faq">
+                        <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
                     </li>
                     <li class="nav-item" id="contact">
                         <a class="nav-link" href="contact">Contact</a>
@@ -181,7 +181,7 @@
                     <ul>
 
                         <li><a href="{{ route('affiliate') }}">Affiliate</a></li>
-                        <li><a href="faq">FAQ</a></li>
+                        <li><a href="{{ route('faq') }}">FAQ</a></li>
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>

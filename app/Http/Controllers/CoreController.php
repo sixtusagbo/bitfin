@@ -80,4 +80,14 @@ class CoreController extends Controller
     {
         return view('core.affiliate');
     }
+
+    /**
+     * Display the faq page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function faq()
+    {
+        return view('core.faq');
+    }
 }
