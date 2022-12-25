@@ -23,6 +23,7 @@ Route::get('/commitments', [CoreController::class, 'commitments'])->name('commit
 Route::get('/stratagies', [CoreController::class, 'stratagies'])->name('stratagies');
 Route::get('/affiliate', [CoreController::class, 'affiliate'])->name('affiliate');
 Route::get('/faq', [CoreController::class, 'faq'])->name('faq');
+Route::get('/contact', [CoreController::class, 'contact'])->name('contact');
 
 Auth::routes();
 

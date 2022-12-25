@@ -90,4 +90,14 @@ class CoreController extends Controller
     {
         return view('core.faq');
     }
+
+    /**
+     * Display the contact page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        return view('core.contact');
+    }
 }
