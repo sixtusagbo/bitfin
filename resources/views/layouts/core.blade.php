@@ -107,8 +107,10 @@
                             <a class="dropdown-item @if (Request::is('about')) active @endif" id="about-us"
                                 href="{{ route('about') }}">About us</a>
                             <a class="dropdown-item @if (Request::is('why_us')) active @endif" id="why-us"
-                                href="why_us">Why Choose us</a>
+                                href="{{ route('why_us') }}">Why Choose us</a>
 
+                            <a class="dropdown-item @if (Request::is('forex_trading')) active @endif"
+                                id="forex_trading" href="forex_trading">Forex Trading</a>
                             <a class="dropdown-item" id="commitments" href="commitments">Commitments</a>
                             <a class="dropdown-item" id="stratagies" href="stratagies">Strategies</a>
                         </div>
@@ -185,7 +187,7 @@
                     <ul>
 
                         <li><a href="{{ route('about') }}">About us</a></li>
-                        <li><a href="why_us">Why Choose Us</a></li>
+                        <li><a href="{{ route('why_us') }}">Why Choose Us</a></li>
 
                         <li><a href="commitments">Commitments</a></li>
                         <li><a href="stratagies">Strategies</a></li>

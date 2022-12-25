@@ -32,6 +32,16 @@ class CoreController extends Controller
     }
 
     /**
+     * Display the why_us page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function why_us()
+    {
+        return view('core.why_us');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

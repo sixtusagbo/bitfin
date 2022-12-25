@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CoreController::class, 'index']);
 Route::get('/about', [CoreController::class, 'about'])->name('about');
+Route::get('/why_us', [CoreController::class, 'why_us'])->name('why_us');
 
 Auth::routes();
 
