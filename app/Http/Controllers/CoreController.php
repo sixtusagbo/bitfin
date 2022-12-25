@@ -22,6 +22,16 @@ class CoreController extends Controller
     }
 
     /**
+     * Display the about page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function about()
+    {
+        return view('core.about');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

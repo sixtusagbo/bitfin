@@ -93,7 +93,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active" id="index">
+                    <li class="nav-item @if (Request::is('/')) active @endif" id="index">
                         <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
 
@@ -104,8 +104,10 @@
                         </a>
                         <div class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item" id="about-us" href="about">About us</a>
-                            <a class="dropdown-item" id="why-us" href="why_us">Why Choose us</a>
+                            <a class="dropdown-item @if (Request::is('about')) active @endif" id="about-us"
+                                href="{{ route('about') }}">About us</a>
+                            <a class="dropdown-item @if (Request::is('why_us')) active @endif" id="why-us"
+                                href="why_us">Why Choose us</a>
 
                             <a class="dropdown-item" id="commitments" href="commitments">Commitments</a>
                             <a class="dropdown-item" id="stratagies" href="stratagies">Strategies</a>
@@ -135,6 +137,21 @@
                             <script src="//code.tidio.co/bqwkfaba7sy6a2zlvrdxiwbzmz0bsjmw.js" async></script>
                         </li>
                     @endauth
+                    @if (config('myglobals.socials.facebook'))
+                        <li class="nav-item">
+                            <ul class="nav-social">
+                                <li><a href="{{ config('myglobals.socials.twitter') }}"><img
+                                            src="{{ asset('images/tp-t.png') }}" alt=""></a>
+                                </li>
+                                <li><a href="{{ config('myglobals.socials.facebook') }}"><img
+                                            src="{{ asset('images/tp-f.png') }}" alt=""></a>
+                                </li>
+                                <li><a href="{{ config('myglobals.socials.instagram') }}"><img
+                                            src="{{ asset('images/tp-i.png') }}" alt=""></a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
                 </ul>
             </div>
@@ -167,7 +184,7 @@
                     <h4>Company</h4>
                     <ul>
 
-                        <li><a href="about">About us</a></li>
+                        <li><a href="{{ route('about') }}">About us</a></li>
                         <li><a href="why_us">Why Choose Us</a></li>
 
                         <li><a href="commitments">Commitments</a></li>
@@ -194,6 +211,7 @@
 
         </div>
     </section>
+
     <div class="copyrights">
         <div class="container">
             <ul>

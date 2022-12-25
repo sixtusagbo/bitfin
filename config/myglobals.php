@@ -1,6 +1,7 @@
 <?php
 
 return [
+  // TODO: Create Setting model and fetch these from db
 
   /*
     |--------------------------------------------------------------------------
@@ -11,11 +12,11 @@ return [
     |
     */
   'socials' => [
-    'facebook' => 'https://facebook.com/',
-    'twitter' => 'https://twitter.com/',
-    'instagram' => 'https://instagram.com/',
-    'whatsapp' => '+012 345 6789',
-    'email' => 'miracleagbosixtus@gmail.com',
+    // 'facebook' => 'https://facebook.com/',
+    // 'twitter' => 'https://twitter.com/',
+    // 'instagram' => 'https://instagram.com/',
+    // 'whatsapp' => '+1 345 676 679',
+    'email' => 'support@bitfin.co',
     'youtube' => 'https://www.youtube.com/embed/WrgwWDszPMs?autoplay=1',
   ],
 
