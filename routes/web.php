@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [CoreController::class, 'index']);
 Route::get('/about', [CoreController::class, 'about'])->name('about');
 Route::get('/why_us', [CoreController::class, 'why_us'])->name('why_us');
+Route::get('/forex_trading', [CoreController::class, 'forex_trading'])->name('forex_trading');
 
 Auth::routes();
 

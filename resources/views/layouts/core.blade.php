@@ -110,7 +110,7 @@
                                 href="{{ route('why_us') }}">Why Choose us</a>
 
                             <a class="dropdown-item @if (Request::is('forex_trading')) active @endif"
-                                id="forex_trading" href="forex_trading">Forex Trading</a>
+                                id="forex_trading" href="{{ route('forex_trading') }}">Forex Trading</a>
                             <a class="dropdown-item" id="commitments" href="commitments">Commitments</a>
                             <a class="dropdown-item" id="stratagies" href="stratagies">Strategies</a>
                         </div>
