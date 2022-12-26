@@ -131,4 +131,22 @@ class HomeController extends Controller
 
         return view('dash.pnl_calculator', $data);
     }
+
+    /**
+     * Show the application deposit_list page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function deposit_list()
+    {
+        $plans = Plan::all();
+        $currentUserPayments = auth()->user()->payments;
+
+        $data = [
+            'plans' => $plans,
+            'currentUserPayments' => $currentUserPayments,
+        ];
+
+        return view('dash.deposit_list', $data);
+    }
 }

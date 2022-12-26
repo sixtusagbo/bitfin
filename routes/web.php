@@ -39,3 +39,4 @@ Route::get('/deposit', [HomeController::class, 'deposit'])->name('deposit');
 Route::post('/confirm_deposit', [HomeController::class, 'confirm_deposit'])->name('confirm_deposit');
 Route::post('/create_deposit', [HomeController::class, 'create_deposit'])->name('create_deposit');
 Route::get('/pnl_calculator', [HomeController::class, 'pnl_calculator'])->name('pnl_calculator');
+Route::get('/deposit_list', [HomeController::class, 'deposit_list'])->name('deposit_list');
