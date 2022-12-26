@@ -33,9 +33,9 @@ class Payment extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function paymentWallet()
+    public function wallet()
     {
-        return $this->belongsTo(PaymentWallet::class);
+        return $this->belongsTo(PaymentWallet::class, 'payment_wallet_id');
     }
 
     /**

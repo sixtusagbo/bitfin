@@ -28,7 +28,8 @@
                     <h1 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;color:wheat;">
                         <span>WE </span> ARE THE
                         HIGHEST PAYING <span>&amp;</span> MINING
-                        COMPANY GLOBALLY</h1>
+                        COMPANY GLOBALLY
+                    </h1>
                     <div class="hero-action wow fadeInUp" data-wow-delay="0.2s"
                         style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                         <a href="about" class="btn-h-left">Read More <svg xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +216,7 @@
                                     </p>
 
                                     <p class="text-white"><strong><em>After {{ $plan->mining_period / 24 }}
-                                                Days</em></strong></p>
+                                                Day(s)</em></strong></p>
                                     <ul>
                                         <li>
                                             Minimum Input: <strong>

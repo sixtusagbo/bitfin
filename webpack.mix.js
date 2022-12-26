@@ -11,14 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/sass/core.scss', 'public/css')
+mix.js('resources/js/app.js', 'public/js')
+  .sass('resources/sass/core.scss', 'public/css')
   .sass('resources/sass/dash.scss', 'public/css')
-  // .js('resources/js/app.js', 'public/js')
-  // .sass('resources/sass/app.scss', 'public/css')
+  .sass('resources/sass/app.scss', 'public/css')
   .sourceMaps(true, 'source-map')
   .options({
     processCssUrls: false // Do not touch stylesheet url()'s
   })
   .version()
-  .browserSync('http://127.0.0.1:8000/')
+  // .browserSync('http://127.0.0.1:8000/')
   ;

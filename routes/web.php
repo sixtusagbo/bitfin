@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CoreController;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,7 @@ Route::get('/support', [DashController::class, 'support'])->name('support');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/deposit', [HomeController::class, 'deposit'])->name('deposit');
+Route::post('/confirm_deposit', [HomeController::class, 'confirm_deposit'])->name('confirm_deposit');
+Route::post('/create_deposit', [HomeController::class, 'create_deposit'])->name('create_deposit');
+Route::get('/pnl_calculator', [HomeController::class, 'pnl_calculator'])->name('pnl_calculator');

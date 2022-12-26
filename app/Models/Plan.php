@@ -24,6 +24,6 @@ class Plan extends Model
      */
     public function payments()
     {
-        return $this->hasMany(UserPayments::class);
+        return $this->hasMany(Payment::class);
     }
 }

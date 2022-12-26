@@ -9,7 +9,6 @@
         <li class="one"><a href="{{ route('home') }}">Account</a></li>
         <li class="two"><a href="{{ url('/deposit') }}">Deposit now</a></li>
         <li class="three"><a href="{{ url('/deposit_list') }}">Active Deposits</a></li>
-        <li class="four"><a href="{{ url('/earnings') }}">History</a></li>
         <li class="five"><a href="{{ url('/referrals') }}">Referrals</a></li>
         <li class="seven"><a href="{{ url('/withdraw') }}">Withdraw</a></li>
         <li class="eight"><a href="{{ url('/profile') }}">Edit</a></li>
