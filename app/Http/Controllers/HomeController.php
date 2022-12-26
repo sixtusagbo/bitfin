@@ -149,4 +149,14 @@ class HomeController extends Controller
 
         return view('dash.deposit_list', $data);
     }
+
+    /**
+     * Show the application withdrawal page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function withdraw()
+    {
+        return view('dash.withdraw');
+    }
 }
