@@ -58,7 +58,7 @@
                                             <br>
 
                                             @if ($currentUserPayments->count() > 0)
-                                                <table class="posts-table">
+                                                <table class="">
                                                     <thead>
                                                         <tr class="mi-table-info">
                                                             <th class="ps-4">DEPOSIT AMOUNT</th>
@@ -72,7 +72,7 @@
                                                         @forelse ($currentUserPayments->where('plan_id', $plan->id)->where('status', '>', 0) as $payment)
                                                             <tr>
                                                                 <td>
-                                                                    ${{ number_format($payment->amount, 2) }}
+                                                                    @money($payment->amount)
                                                                 </td>
                                                                 <td>{{ $payment->wallet->name }}
                                                                 </td>
@@ -132,8 +132,6 @@
                                         Admin please run your migrations!
                                     </div>
                                 @endforelse
-
-
 
                             </div>
                         </div>

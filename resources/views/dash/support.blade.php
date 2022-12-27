@@ -94,8 +94,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td height="60" colspan="6" align="center" valign="bottom"><input type=submit
-                                            value="Send" class="sbmt"></td>
+                                    <td height="60" colspan="6" align="center" valign="bottom">
+                                        {{-- <input type="submit" value="Send" class="sbmt"> --}}
+                                        <a href="mailto:{{ config('myglobals.socials.email') }}" class="btn btn-warning"
+                                            style="color: #000">SEND</a>
+                                    </td>
                                 </tr>
                             </table>
                         </form>

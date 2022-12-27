@@ -6,7 +6,9 @@ use App\Models\Payment;
 use App\Models\PaymentWallet;
 use App\Models\Plan;
 use App\Models\User;
+use App\Models\Withdrawal;
 use App\Notifications\DepositCreatedNotification;
+use App\Notifications\WithdrawalCreatedNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -173,6 +175,32 @@ class HomeController extends Controller
     public function withdraw()
     {
         return view('dash.withdraw');
+    }
+
+    /**
+     * Store withdrawal
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function store_withdrawal(Request $request)
+    {
+        // return $request;
+
+        $values = $request->validate([
+            'amount' => 'required',
+        ]);
+
+        $user = auth()->user();
+
+        $withdrawal = new Withdrawal();
+        $withdrawal->user_id = $user->id;
+        $withdrawal->amount = $values['amount'];
+        $withdrawal->save();
+
+        Notification::send($user, new WithdrawalCreatedNotification($withdrawal));
+
+        return redirect()->route('withdraw')->with('success', 'Withdrawal request submitted successfully.');
     }
 
     /**

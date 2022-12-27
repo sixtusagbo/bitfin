@@ -24,7 +24,7 @@
                             @csrf
 
                             @if (session('success'))
-                                {{ session('success') }}
+                                <h4>{{ session('success') }}</h4>
                             @endif
                             <div class="my_accont" style="margin:0">
 

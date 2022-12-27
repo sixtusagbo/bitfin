@@ -77,9 +77,10 @@ class User extends Authenticatable
      */
     public function getAccountBalanceAttribute()
     {
-        $userPayments = $this->payments->where('status', '>', 0);
+        $userPayments = $this->payments->where('status', '>', 0)->sum->amount;
+        $withdrawals = $this->payments->where('status', 1)->sum->amount;
 
-        return $this->account_balance = $userPayments->sum->amount + $this->earnings;
+        return $this->account_balance = (($userPayments + $this->earnings) - $withdrawals);
     }
 
     /**
