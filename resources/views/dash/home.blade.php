@@ -30,7 +30,8 @@
                                 <div class="accountbox"><span class="icon"><img
                                             src="{{ asset('images/auth/accountbox3.png') }}" alt=""></span>
                                     <p>Last Access</p>
-                                    <h4>{{ Auth::user()->last_access }}</h4>
+                                    <h4>{{ Auth::user()->last_access ? Auth::user()->last_access->toDayDateTimeString() : Carbon\Carbon::now()->toDayDateTimeString() }}
+                                    </h4>
                                 </div>
                                 <div class="accountbox"><span class="icon"><img
                                             src="{{ asset('images/auth/accountbox4.png') }}" alt=""></span>

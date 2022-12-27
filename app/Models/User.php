@@ -49,6 +49,18 @@ class User extends Authenticatable
     ];
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'last_access',
+    ];
+
+    /**
      * The accessors to append to the model's array form.
      *
      * @var array
