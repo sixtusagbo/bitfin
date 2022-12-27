@@ -48,7 +48,7 @@
                                         </td>
                                         <td><b style="color:green">$0.00</b></td>
                                         <td><b style="color:red">$0.00</b></td>
-                                        <td><a href="{{ url('/profile') }}" class="btn btn-info">Edit</a></td>
+                                        <td><a href="{{ url('/edit_account') }}" class="btn btn-info">Edit</a></td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -57,7 +57,7 @@
                                         </td>
                                         <td><b style="color:green">$0.00</b></td>
                                         <td><b style="color:red">$0.00</b></td>
-                                        <td><a href="{{ url('/profile') }}" class="btn btn-info">Edit</a></td>
+                                        <td><a href="{{ url('/edit_account') }}" class="btn btn-info">Edit</a></td>
                                     </tr>
 
 

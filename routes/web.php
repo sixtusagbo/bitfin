@@ -41,3 +41,6 @@ Route::post('/create_deposit', [HomeController::class, 'create_deposit'])->name(
 Route::get('/pnl_calculator', [HomeController::class, 'pnl_calculator'])->name('pnl_calculator');
 Route::get('/deposit_list', [HomeController::class, 'deposit_list'])->name('deposit_list');
 Route::get('/withdraw', [HomeController::class, 'withdraw'])->name('withdraw');
+Route::get('/referrals', [HomeController::class, 'referrals'])->name('referrals');
+Route::get('/edit_account', [HomeController::class, 'profile'])->name('profile');
+Route::post('/profile', [HomeController::class, 'update_profile'])->name('profile.update');

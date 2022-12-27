@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Payment;
 use App\Models\PaymentWallet;
 use App\Models\Plan;
+use App\Models\User;
 use App\Notifications\DepositCreatedNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 
 class HomeController extends Controller
@@ -158,5 +160,62 @@ class HomeController extends Controller
     public function withdraw()
     {
         return view('dash.withdraw');
+    }
+
+    /**
+     * Show the application referrals page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function referrals()
+    {
+        return view('dash.referrals');
+    }
+
+    /**
+     * Show the application profile page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function profile()
+    {
+        return view('dash.profile');
+    }
+
+    /**
+     * Show the application update_profile page.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update_profile(Request $request)
+    {
+        // return $request;
+
+        $this->validate($request, [
+            'password' => ['confirmed'],
+        ]);
+
+        $name = $request->name;
+        $password = $request->password;
+        $btc_address = $request->btc_address;
+        $eth_address = $request->eth_address;
+
+        $user = User::find(auth()->user()->id);
+        if ($name != null) {
+            $user->name = $name;
+        }
+        if ($password != null) {
+            $user->password = Hash::make($password);
+        }
+        if ($btc_address != null) {
+            $user->btc_address = $btc_address;
+        }
+        if ($eth_address != null) {
+            $user->eth_address = $eth_address;
+        }
+        $user->update();
+
+        return redirect()->route('profile')->with('success', 'Your account data has been updated successfully.');
     }
 }
