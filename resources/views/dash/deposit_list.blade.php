@@ -23,7 +23,7 @@
 
 
                         <div class="detailed-stats-box">
-                            Total: <strong>$0.00</strong>
+                            Total: <strong>@money($active_deposits)</strong>
                         </div>
 
                         @forelse ($plans as $plan)

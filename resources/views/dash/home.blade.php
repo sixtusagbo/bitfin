@@ -44,17 +44,17 @@
                                         value="{{ Auth::user()->referral_link }}"></div>
                             </div>
                             <div class="acchead">
-                                <div class="left">Account Balance <strong>$0.00</strong></div>
-                                <div class="right">Earned Total <strong>$0.00</strong></div>
+                                <div class="left">Account Balance <strong>@money(Auth::user()->account_balance)</strong></div>
+                                <div class="right">Earned Total <strong> @money(Auth::user()->earnings) </strong></div>
                             </div>
                             <div class="accdetailsbox">
                                 <div class="head">Deposit Statements <span class="icon"><img
                                             src="{{ asset('images/auth/depstatement.png') }}" alt=""></span></div>
                                 <div class="infos">
                                     <ul>
-                                        <li>Active Deposit <strong>$0.00</strong></li>
-                                        <li>Last Deposit <strong>$N/A</strong></li>
-                                        <li>Total Deposit <strong>$0.00</strong></li>
+                                        <li>Active Deposit <strong>@money($total_deposits)</strong></li>
+                                        <li>Last Deposit <strong>@money($last_deposit)</strong></li>
+                                        <li>Total Deposit <strong>@money($total_deposits)</strong></li>
                                     </ul>
                                 </div>
                             </div>
@@ -64,9 +64,9 @@
                                 </div>
                                 <div class="infos">
                                     <ul>
-                                        <li>Pending Withdrawal <strong>$0.00</strong></li>
-                                        <li>Last Withdrawal <strong>$N/A</strong></li>
-                                        <li>Withdrew Total <strong>$0.00</strong></li>
+                                        <li>Pending Withdrawal <strong>@money(Auth::user()->pending_withdrawals)</strong></li>
+                                        <li>Last Withdrawal <strong>@money($last_withdrawal)</strong></li>
+                                        <li>Withdrew Total <strong>@money($total_withdrawals)</strong></li>
                                     </ul>
                                 </div>
                             </div>

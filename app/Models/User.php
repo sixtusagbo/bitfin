@@ -53,7 +53,12 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $appends = ['referral_link'];
+    protected $appends = [
+        'referral_link',
+        'account_balance',
+        'earnings',
+        'pending_withdrawals',
+    ];
 
     /**
      * Get the user's referral link.
@@ -63,6 +68,45 @@ class User extends Authenticatable
     public function getReferralLinkAttribute()
     {
         return $this->referral_link = route('register', ['ref' => $this->username]);
+    }
+
+    /**
+     * Get the user's account balance.
+     *
+     * @return float
+     */
+    public function getAccountBalanceAttribute()
+    {
+        $userPayments = $this->payments->where('status', '>', 0);
+
+        return $this->account_balance = $userPayments->sum->amount + $this->earnings;
+    }
+
+    /**
+     * Get the user's earnings.
+     *
+     * @return float
+     */
+    public function getEarningsAttribute()
+    {
+        $userReferralEarnings = config('myglobals.ref_worth') * $this->referrals->count();
+        $completedPlans = $this->payments->where('status', 2);
+        $planEarnings = 0;
+        foreach ($completedPlans as $payment) {
+            $planEarnings += ($payment->plan->return / 100) * $payment->amount;
+        }
+
+        return $this->earnings = $planEarnings + $userReferralEarnings;
+    }
+
+    /**
+     * Get the user's pending withdrawals.
+     *
+     * @return float
+     */
+    public function getPendingWithdrawalsAttribute()
+    {
+        return $this->pending_withdrawals = $this->withdrawals->where('status', 0)->sum->amount;
     }
 
 

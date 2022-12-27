@@ -92,6 +92,8 @@
 
                             <div class="my_accont">
                                 <div class="payment-balance">
+                                    <h3>Your account balance</h3>
+                                    <h2>@money(Auth::user()->account_balance)</h2>
                                     <p>AMOUNT TO SPEND:</p>
                                     <input type="text" name="amount" value="100.00" class="fullwidthinput"
                                         size="15">

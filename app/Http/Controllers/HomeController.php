@@ -31,7 +31,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dash.home');
+        $user = auth()->user();
+        $last_deposit = $user->payments->where('status', '>', 0)->last();
+        $last_withdrawal = $user->withdrawals->where('status', '>', 0)->last();
+
+        $data = [
+            'last_deposit' => $last_deposit ? $last_deposit->amount : 0.00,
+            'total_deposits' => $user->payments->where('status', '>', 0)->sum->amount,
+            'last_withdrawal' => $last_withdrawal ? $last_withdrawal->amount : 0.00,
+            'total_withdrawals' => $user->withdrawals->where('status', '>', 0)->sum->amount,
+        ];
+
+        return view('dash.home', $data);
     }
 
     /**
@@ -141,12 +152,14 @@ class HomeController extends Controller
      */
     public function deposit_list()
     {
+        $user = auth()->user();
         $plans = Plan::all();
-        $currentUserPayments = auth()->user()->payments;
+        $currentUserPayments = $user->payments;
 
         $data = [
             'plans' => $plans,
             'currentUserPayments' => $currentUserPayments,
+            'active_deposits' => $user->payments->where('status', '>', 0)->sum->amount,
         ];
 
         return view('dash.deposit_list', $data);
