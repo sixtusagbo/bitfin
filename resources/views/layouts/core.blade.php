@@ -30,8 +30,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/flipclock.css') }}">
-    <link type="text/css" rel="stylesheet" charset="UTF-8"
-        href="{{ asset('ven/translate_googleapis/translate_static/css/translateelement.css') }}">
     <style rel="stylesheet" type="text/css" href="{{ asset('css/eapps.css') }}"></style>
     <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
 
@@ -65,7 +63,7 @@
                                     function googleTranslateElementInit() {
                                         new google.translate.TranslateElement({
                                             pageLanguage: 'en',
-                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+                                            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
                                         }, 'google_translate_element');
                                     }
                                 </script>
@@ -243,10 +241,6 @@
     <!-- Other Scripts Start -->
 
     <script src="{{ asset('js/lib/jquery-3.3.1/jquery.min.js') }}" type="text/javascript"></script>
-    <script type="text/javascript" charset="UTF-8"
-        src="{{ asset('ven/translate_googleapis/translate_static/js/element/main.js') }}"></script>
-    <script type="text/javascript" charset="UTF-8"
-        src="{{ asset('ven/translate_googleapis/element/TE_20210503_00/e/js/element/element_main.js') }}"></script>
     <script src="{{ asset('js/lib/popper.js-1.12.9/umd/popper.min.js') }}"></script>
     <script src="{{ asset('js/lib/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/lib/ion.rangeSlider.min.js') }}" type="text/javascript"></script>
