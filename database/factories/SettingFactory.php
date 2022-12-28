@@ -18,7 +18,7 @@ class SettingFactory extends Factory
     {
         return [
             'app_name' => 'Bitcoin Financial Company',
-            'email' => 'support@bitfin.co',
+            'email' => 'support@bit-fin.co',
             'youtube_video' => 'https://www.youtube.com/embed/WrgwWDszPMs?autoplay=1',
             'currency' => '$',
             'referral_worth' => 50,

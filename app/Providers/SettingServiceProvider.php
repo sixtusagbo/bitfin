@@ -26,41 +26,43 @@ class SettingServiceProvider extends ServiceProvider
     {
         $settings = Setting::first();
 
-        config([
-            'myglobals' => [
-                'app_name' => $settings->app_name,
+        $global_variables = [
+            'app_name' => $settings->app_name,
 
-                /*
-              |--------------------------------------------------------------------------
-              | Social Media Links
-              |--------------------------------------------------------------------------
-              |
-              | This option controls the social media links available across the app
-              |
-              */
-                'socials' => [
-                    'facebook' => $settings->facebook,
-                    'twitter' => $settings->twitter,
-                    'instagram' => $settings->instagram,
-                    'whatsapp' => $settings->whatsapp,
-                    'email' => $settings->email,
-                    'youtube' => $settings->youtube_video,
-                ],
+            /*
+          |--------------------------------------------------------------------------
+          | Social Media Links
+          |--------------------------------------------------------------------------
+          |
+          | This option controls the social media links available across the app
+          |
+          */
+            'socials' => [
+                'facebook' => $settings->facebook,
+                'twitter' => $settings->twitter,
+                'instagram' => $settings->instagram,
+                'whatsapp' => $settings->whatsapp,
+                'email' => $settings->email,
+                'youtube' => $settings->youtube_video,
+            ],
 
-                /*
-              |--------------------------------------------------------------------------
-              | Finance
-              |--------------------------------------------------------------------------
-              |
-              | This option controls the financial settings of the app
-              |
-              */
-                'currency' => $settings->currency,
-                'ref_worth' => $settings->referral_worth,
-                'withdrawal_charge' => $settings->withdrawal_charge, // In percent
-                'min_investment' => $settings->min_investment,
-                'min_withdrawal' => $settings->min_withdrawal,
-            ]
-        ]);
+            /*
+          |--------------------------------------------------------------------------
+          | Finance
+          |--------------------------------------------------------------------------
+          |
+          | This option controls the financial settings of the app
+          |
+          */
+            'currency' => $settings->currency,
+            'ref_worth' => $settings->referral_worth,
+            'withdrawal_charge' => $settings->withdrawal_charge, // In percent
+            'min_investment' => $settings->min_investment,
+            'min_withdrawal' => $settings->min_withdrawal,
+        ];
+
+        $fp = fopen(base_path('config/myglobals.php'), 'w');
+        fwrite($fp, '<?php return ' . var_export($global_variables, true) . ';');
+        fclose($fp);
     }
 }
