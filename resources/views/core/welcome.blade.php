@@ -7,7 +7,7 @@
                 <img class="d-block w-100" src="{{ asset('images/slider-usa.jpg') }}" alt="Sixth slide">
                 <div class="carousel-caption d-md-block">
                     <h1 class="wow fadeInUp" data-wow-delay="0.2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp; color:whitesmoke;">
+                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp; color:wheat;">
                         <span></span> START MINING WITH {{ config('myglobals.app_name') }} PLATFORM
                     </h1>
                     <div class="hero-action wow fadeInUp" data-wow-delay="0.4s"
