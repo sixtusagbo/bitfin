@@ -23,11 +23,11 @@
         <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
             <h3>Our Terms and Conditions</h3>
             <p>1. This Agreement is a binding contract between you and us, and it sets out your and our
-                rights and obligations with respect to your membership of Bitcoin Financial Ltd Company and use of the
+                rights and obligations with respect to your membership of Bitcoin Financial Company and use of the
                 Platform. In executing this Agreement, you are indicating that you agree to adhere to, and be
                 bound by, all of its terms.</p>
-            <p>2. Upon registration to our website, you will become a Member of Bitcoin Financial Ltd Company. By
-                making an investment you will become a client of Bitcoin Financial Ltd Company. You are supposed to
+            <p>2. Upon registration to our website, you will become a Member of Bitcoin Financial Company. By
+                making an investment you will become a client of Bitcoin Financial Company. You are supposed to
                 provide required information while registering with us. The declarations set forward in the
                 self-certification should be truthful and genuinely apply to you.</p>
             <p>3. We do not persuade you to invest with us, but only provide you with investment advice.

@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <p>Bitcoin Financial Ltd Company appreciate the trust the investors have in us all throughout the
+                    <p>Bitcoin Financial Company appreciate the trust the investors have in us all throughout the
                         world. Even at
                         difficult times when other businesses are suffering due to pandemics, war, economic and
                         social unrest, we on the other hand have been able to support our investors and our

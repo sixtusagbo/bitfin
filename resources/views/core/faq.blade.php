@@ -27,7 +27,7 @@
             <div class="faq-wr">
                 <button class="faq-q" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false"
                     aria-controls="collapse-1">
-                    How does Bitcoin Financial Ltd Company make profit?
+                    How does Bitcoin Financial Company make profit?
                 </button>
                 <div class="collapse" id="collapse-1">
                     <div class="card card-body faq-card">
@@ -42,7 +42,7 @@
             <div class="faq-wr">
                 <button class="faq-q" type="button" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false"
                     aria-controls="collapse-2">
-                    How can I earn from Bitcoin Financial Ltd Company?
+                    How can I earn from Bitcoin Financial Company?
                 </button>
                 <div class="collapse" id="collapse-2">
                     <div class="card card-body faq-card">
@@ -54,7 +54,7 @@
             <div class="faq-wr">
                 <button class="faq-q" type="button" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false"
                     aria-controls="collapse-3">
-                    How do I register with Bitcoin Financial Ltd Company?
+                    How do I register with Bitcoin Financial Company?
                 </button>
                 <div class="collapse" id="collapse-3">
                     <div class="card card-body faq-card">
@@ -191,7 +191,7 @@
             <div class="faq-wr">
                 <button class="faq-q" type="button" data-toggle="collapse" data-target="#collapse-14"
                     aria-expanded="false" aria-controls="collapse-14">
-                    Are there any withdrawal fees or charges for withdrawals from Bitcoin Financial Ltd Company account
+                    Are there any withdrawal fees or charges for withdrawals from Bitcoin Financial Company account
                     to wallet?
                 </button>
                 <div class="collapse" id="collapse-14">
@@ -207,7 +207,7 @@
                 </button>
                 <div class="collapse" id="collapse-16">
                     <div class="card card-body faq-card">
-                        <p>Log into your Bitcoin Financial Ltd Company account and click on “Account Information.” You
+                        <p>Log into your Bitcoin Financial Company account and click on “Account Information.” You
                             can change
                             your account information there.</p>
                     </div>

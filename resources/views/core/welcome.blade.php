@@ -8,7 +8,7 @@
                 <div class="carousel-caption d-md-block">
                     <h1 class="wow fadeInUp" data-wow-delay="0.2s"
                         style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp; color:whitesmoke;">
-                        <span></span> START MINING WITH Bitcoin Financial Ltd Company PLATFORM
+                        <span></span> START MINING WITH Bitcoin Financial Company PLATFORM
                     </h1>
                     <div class="hero-action wow fadeInUp" data-wow-delay="0.4s"
                         style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
@@ -170,11 +170,11 @@
                         <div class="first-sc">
                             <h4>About us</h4>
                             <h2>CLOUD MINING SERVICE PROVIDERS.</h2>
-                            <p>Bitcoin Financial Ltd Company Platform is a group company of 190, 000+ strong
+                            <p>Bitcoin Financial Company Platform is a group company of 190, 000+ strong
                                 professionals and 5 mega data center’s parent Cyfuture with experience of over 15+ years
                                 in Data Center Industry serving 32 million Customers. Our crypto mining team comes from
                                 different scientific disciplines and constantly monitor latest innovations and implement
-                                them in order to benefit our investors.. At Bitcoin Financial Ltd Company, we’re using
+                                them in order to benefit our investors.. At Bitcoin Financial Company, we’re using
                                 world’s best ASIC (Application specific integrated circuit) and GPU (Graphics processing
                                 unit) machines to generate best returns for investors with high efficiencies.</p>
                             <div class="btn-g">
@@ -399,7 +399,7 @@
                             <h2>Commitment To Our Investors</h2>
                         </div>
                         <p>
-                            Bitcoin Financial Ltd Company appreciate the trust the investors have in us all throughout
+                            Bitcoin Financial Company appreciate the trust the investors have in us all throughout
                             the
                             world. Even at
                             difficult times when other businesses are suffering due to pandemics, war, economic and
@@ -570,7 +570,7 @@
         <div class="container">
             <div class="section-title btm-50">
                 <h5>Advantages</h5>
-                <h2>Advantages Of Investing In Bitcoin Financial Ltd Company</h2>
+                <h2>Advantages Of Investing In Bitcoin Financial Company</h2>
             </div>
             <div class="row centered wow fadeInUp" style="visibility: hidden; animation-name: none;">
                 <div class="col-lg-6 col-md-6">
@@ -579,7 +579,7 @@
                         <p>We aim on creating risk-free investment environment for our investors. Safety of your
                             investment will be our prime concern. Data-security and anti-theft protection features have
                             been implemented to safeguard the information of all our investors and stakeholders. Bitcoin
-                            Financial Ltd Company is an authentic company with EV SSL Certificate. Our website is very
+                            Financial Company is an authentic company with EV SSL Certificate. Our website is very
                             secure and guarantees safety of our investors against all frauds. We have incorporated
                             robust content management system for advanced protection and sustaining fast processes. All
                             the data of the company and its investors is encrypted and protected.</p>
@@ -596,8 +596,8 @@
                 <div class="col-lg-6 col-md-6  order-sm-12">
                     <div class="adv-con">
                         <h1>Guaranteed Income</h1>
-                        <p>Bitcoin Financial Ltd Company has a much diversified business portfolio. All the portfolios
-                            of Bitcoin Financial Ltd Company have been highly profitable. Having diversified business
+                        <p>Bitcoin Financial Company has a much diversified business portfolio. All the portfolios
+                            of Bitcoin Financial Company have been highly profitable. Having diversified business
                             structure in Digital Cloud mining has allowed us to promptly pay high returns to our
                             investors. Our major income comes from Digital Cloud mining which is the most efficient way
                             to mine crypto on the blockchain networks with high returns. Our experts are well-versed in
@@ -605,7 +605,7 @@
                             get highest profit. Our crypto mining team comes from different scientific disciplines and
                             constantly monitor latest innovations and implement them in order to benefit our investors.
                             We have large-scale industrial data centers with state-of-the-art technology to host the
-                            diverse and complex mining environments. At Bitcoin Financial Ltd Company, we’re using
+                            diverse and complex mining environments. At Bitcoin Financial Company, we’re using
                             world’s best ASIC (Application specific integrated circuit) and GPU (Graphics processing
                             unit) machines to generate best returns with high efficiencies..</p>
                     </div>
@@ -622,11 +622,11 @@
                     <div class="adv-con">
                         <h1>Profitable Strategy</h1>
                         <p>Cryptocurrency Mining is done by specialized computers. The role of miners is to secure the
-                            network and to process every Bitcoin transaction. Here in Bitcoin Financial Ltd Company
+                            network and to process every Bitcoin transaction. Here in Bitcoin Financial Company
                             platform , we achieve this by solving a computational problems which allows us to chain
                             together blocks of transactions. For this service, we are rewarded with newly-created
                             Bitcoins and transaction fees. Mining is popular today and offers excellent opportunities to
-                            earn extra money. Bitcoin Financial Ltd Company_Miners has been the reliable address for
+                            earn extra money. Bitcoin Financial Company_Miners has been the reliable address for
                             competitively priced cryptominers. Because we only supply profitable products, our customer
                             base are constantly increasing. We strive to keep our customers happy by offering quick
                             delivery and at the best online prices. offering support after purchase speaks for itself.
@@ -764,8 +764,8 @@
         <div class="container wow fadeInUp" style="visibility: hidden; animation-name: none;">
             <div class="section-title btm-50">
                 <h5>Affiliate</h5>
-                <h2>Bitcoin Financial Ltd Company Affiliate Program</h2>
-                <p>Bitcoin Financial Ltd Company offers additional opportunities in the form of referral program and
+                <h2>Bitcoin Financial Company Affiliate Program</h2>
+                <p>Bitcoin Financial Company offers additional opportunities in the form of referral program and
                     binary
                     matching income. Anybody can become a member of our program by registering to our
                     program. To earn referral income, all you have to do is to share information about our
@@ -798,7 +798,7 @@
                         <div class="aff-cntr">
                             <img src="{{ asset('images/bin.jpg') }}" alt="">
                             <h3>GUARANTEED INCOME</h3>
-                            <p>Bitcoin Financial Ltd Company has a much diversified business portfolio. All the
+                            <p>Bitcoin Financial Company has a much diversified business portfolio. All the
                                 portfolios of our Company have been highly profitable. Having diversified business
                                 structure in Digital Cloud mining has allowed us to promptly pay high returns to our
                                 investors. Please refer to our technical support for further details.</p>

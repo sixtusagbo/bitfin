@@ -22,7 +22,7 @@
     <section class="section-sp terms">
         <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
             <h3>Security Information</h3>
-            <p>Bitcoin Financial Ltd Company is an authentic company with EV SSL Certificate. Our website is very
+            <p>Bitcoin Financial Company is an authentic company with EV SSL Certificate. Our website is very
                 secure and guarantees safety of our investors against all frauds. We have provided Digital
                 Share Certificate, Tax Returns and Certification of Incorporation to the Certification
                 Authority and after reviewing our genuineness, we have been provided with EV SSL

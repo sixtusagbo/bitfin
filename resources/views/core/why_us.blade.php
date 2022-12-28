@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-lg-6">
                     <p>Mining is done by specialized computers. The role of miners is to secure the network and to
-                        process every Bitcoin transaction. Here in Bitcoin Financial Ltd Company platform , we achieve
+                        process every Bitcoin transaction. Here in Bitcoin Financial Company platform , we achieve
                         this by solving a computational problems which allows us to chain together blocks of
                         transactions. For this service, we are rewarded with newly-created Bitcoins and transaction
                         fees.</p>
