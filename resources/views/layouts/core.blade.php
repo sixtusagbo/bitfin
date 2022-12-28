@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Bitcoin Financial Company">
+    <meta name="title" content="{{ config('myglobals.app_name') }}">
     <meta name="description"
-        content="Bitcoin Financial Company Platform is a group company of 190, 000+ strong professionals and 5
+        content="{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and 5
     mega data center’s parent Cyfuture with experience of over 15+ years in Data Center Industry
     serving 32 million Customers and generating best returns for investors with high efficiency.">
     <meta name="keywords" content="crypto, mining, service, bitcoin, ethereum">
@@ -14,10 +14,10 @@
     <meta name="language" content="English">
     <meta name="author" content="Bit-fin.co">
 
-    <title>Bitcoin Financial Company</title>
+    <title>{{ config('myglobals.app_name') }}</title>
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
-    <meta property="og:title" content="Bitcoin Financial Company">
+    <meta property="og:title" content="{{ config('myglobals.app_name') }}">
     <meta property="og:description" content="Advance Crypto Mining Service.">
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
 
@@ -172,7 +172,8 @@
                     <div class="foo-log">
                         <img src="{{ asset('images/logo.png') }}" alt="">
                     </div>
-                    <p>Bitcoin Financial Company Platform is a group company of 190, 000+ strong professionals and 5
+                    <p>{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals
+                        and 5
                         mega data center’s parent Cyfuture with experience of over 15+ years in Data Center Industry
                         serving 32 million Customers and generating best returns for investors with high efficiency.</p>
                 </div>

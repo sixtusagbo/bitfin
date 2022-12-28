@@ -41,7 +41,7 @@
                         and more reliable form of trading. We trade several markets including FX, Indices,
                         Commodities, Equities and Cryptos. Our trading system has a tight spread over innumerable
                         pairs, including currencies and spot metals. Forex markets are open all throughout the day,
-                        thus allowing us to trade at our convenience. Bitcoin Financial Company uses automated
+                        thus allowing us to trade at our convenience. {{ config('myglobals.app_name') }} uses automated
                         trading system
                         with quality human assistance. The system also incorporates hedging to minimise trade risks.
                         The data on the Forex market trend is fed constantly back to the system and strategies

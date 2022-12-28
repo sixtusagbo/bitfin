@@ -32,11 +32,13 @@
             style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
             <div class="row">
                 <div class="col-lg-6">
-                    <p>Bitcoin Financial Company Platform is a group company of 190, 000+ strong professionals and 5
+                    <p>{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and
+                        5
                         mega data center’s parent Cyfuture with experience of over 15+ years in Data Center Industry
                         serving 32 million Customers. Our crypto mining team comes from different scientific disciplines
                         and constantly monitor latest innovations and implement them in order to benefit our investors..
-                        At Bitcoin Financial Company, we’re using world’s best ASIC (Application specific integrated
+                        At {{ config('myglobals.app_name') }}, we’re using world’s best ASIC (Application specific
+                        integrated
                         circuit) and GPU (Graphics processing unit) machines to generate best returns for investors with
                         high efficiencies.</p>
                 </div>
@@ -152,8 +154,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-sm-1">
-                    <p>At Bitcoin Financial Company, we understand that not all of our clients are alike. We at
-                        Bitcoin Financial Company
+                    <p>At {{ config('myglobals.app_name') }}, we understand that not all of our clients are alike. We at
+                        {{ config('myglobals.app_name') }}
                         do not discriminate between our clients and want to serve all our clients with utmost
                         dedication. We understand that each of our clients face different challenges with their
                         finances. Our

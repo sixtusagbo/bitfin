@@ -29,8 +29,9 @@
         <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
             <div class="strat">
                 <h1>Hedge Fund Strategy And Private Equity</h1>
-                <p>Bitcoin Financial Company has invested and generated some amazing compounded annual returns by
-                    directly and indirectly participating in the hedge funds. Bitcoin Financial Company apply mostly
+                <p>{{ config('myglobals.app_name') }} has invested and generated some amazing compounded annual returns by
+                    directly and indirectly participating in the hedge funds. {{ config('myglobals.app_name') }} apply
+                    mostly
                     long/short equity strategy and has found great success with it.</p>
                 <div class="str-list">
                     <h4>Long/Short equity strategy:</h4>
@@ -43,7 +44,7 @@
                     <p>Convertibles generally are the hybrid securities including a
                         combination of a bond with an equity option. A convertible arbitrage hedge fund typically
                         includes long convertible bonds and short a proportion of the shares into which they convert.
-                        Here at Bitcoin Financial Company, we take long position on bonds and short positions on
+                        Here at {{ config('myglobals.app_name') }}, we take long position on bonds and short positions on
                         common stock
                         or shares.</p>
                 </div>

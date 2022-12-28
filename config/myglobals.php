@@ -3,6 +3,8 @@
 return [
   // TODO: Create Setting model and fetch these from db
 
+  'app_name' => 'Bitcoin Financial Company',
+
   /*
     |--------------------------------------------------------------------------
     | Social Media Links

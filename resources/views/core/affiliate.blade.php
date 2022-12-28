@@ -22,7 +22,7 @@
     <section class="section-sp affl">
         <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
             <h3>Affiliate Program</h3>
-            <p>Bitcoin Financial Company offers additional opportunities in the form of referral program and binary
+            <p>{{ config('myglobals.app_name') }} offers additional opportunities in the form of referral program and binary
                 matching income. Anybody can become a member of our program by registering to our
                 program. To earn referral income, all you have to do is to share information about our
                 investment offer with your friends, family, acquaintances or colleagues, as well as send them
