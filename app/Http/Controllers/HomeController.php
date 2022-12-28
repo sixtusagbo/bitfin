@@ -7,6 +7,7 @@ use App\Models\PaymentWallet;
 use App\Models\Plan;
 use App\Models\User;
 use App\Models\Withdrawal;
+use App\Notifications\AccountChangeNotification;
 use App\Notifications\DepositCreatedNotification;
 use App\Notifications\WithdrawalCreatedNotification;
 use Carbon\Carbon;
@@ -256,6 +257,8 @@ class HomeController extends Controller
             $user->eth_address = $eth_address;
         }
         $user->update();
+
+        Notification::send($user, new AccountChangeNotification());
 
         return redirect()->route('profile')->with('success', 'Your account data has been updated successfully.');
     }
