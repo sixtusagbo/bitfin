@@ -21,13 +21,13 @@
     <meta property="og:description" content="Advance Crypto Mining Service.">
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" href="{{ mix('css/dash.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hover.css') }}">
     <link rel="stylesheet" href="{{ asset('ven/owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('ven/owlcarousel/assets/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
 <body>
@@ -35,51 +35,11 @@
     <div class="wrapper">
         <div class="headerstrip">&nbsp;</div>
         <div class="headerwrap">
-            <div class="logowrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="logo bounceInDown wow"><a href="{{ url('/') }}"><img
-                                        src="{{ asset('images/logo.png') }}" alt=""></a></div>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-12">
-                            <div class="topheadactions bounceInDown wow">
-                                <div class="phonesupport">Email support: <span>support@bit-fin.co</span></div>
-                                <div class="question">have a questions?</div>
-                                <div class="livechat online"><a href="{{ url('/support') }}">live chat
-                                        <span>online</span></a>
-
-                                </div>
-
-                                <div id="google_translate_element"></div>
-
-                                <script type="text/javascript">
-                                    function googleTranslateElementInit() {
-                                        new google.translate.TranslateElement({
-                                            pageLanguage: 'en',
-                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL
-                                        }, 'google_translate_element');
-                                    }
-                                </script>
-
-                                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-                                </script>
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="menuwrap">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-8 col-sm-12">
                             <div class="nav_wrap">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle
-                                        navigation</span> Menu <i class="fa fa-bars"></i> </button>
                                 <a class="navbar-brand page-scroll hide" href="{{ url('/') }}"><img
                                         src="{{ asset('images/logo.png') }}" alt="" /></a>
                                 <div class="collapse navbar-collapse fadeInRight wow" id="bs-example-navbar-collapse-1">
@@ -92,7 +52,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="loginarea">
+                            <div class="loginarea mt-4">
                                 @auth
                                     <div class="login hvr-backward fadeInLeft wow">
                                         <a href="{{ route('home') }}">
@@ -122,14 +82,23 @@
                                     </div>
                                     <div class="signup hvr-backward fadeInLeft wow">
                                         <a href="{{ route('register') }}"><span class="icon"><img
-                                                    src="{{ asset('images/auth/signupicon.png') }}"
-                                                    alt=""></span>
+                                                    src="{{ asset('images/auth/signupicon.png') }}" alt=""></span>
                                             open
                                             account</a>
                                     </div>
                                 @endauth
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bannerwrap insideheaders">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="bounceInDown wow">Admin <span>Panel</span></h1>
                     </div>
                 </div>
             </div>
@@ -171,51 +140,14 @@
 
     <!-- Other Scripts Start -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="{{ asset('js/lib/setting-2.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/lib/wow.min.js') }}"></script>
     <script src="{{ asset('ven/owlcarousel/owl.carousel.js') }}"></script>
     <script src="//code.tidio.co/bqwkfaba7sy6a2zlvrdxiwbzmz0bsjmw.js" async></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     <!-- Other Scripts End -->
-
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function() {
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
-                items: 4,
-                loop: true,
-                margin: 10,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: false
-                    },
-                    569: {
-                        items: 3,
-                        nav: false
-                    },
-                    1000: {
-                        items: 4,
-                        nav: false,
-                        loop: true,
-                        margin: 20
-                    }
-                }
-            });
-            $('.play').on('click', function() {
-                owl.trigger('play.owl.autoplay', [3000])
-            })
-            $('.stop').on('click', function() {
-                owl.trigger('stop.owl.autoplay')
-            })
-        })
-    </script>
 
     @yield('script')
 

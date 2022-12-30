@@ -7,7 +7,7 @@
     <meta name="title" content="{{ config('myglobals.app_name') }}">
     <meta name="description"
         content="{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and 5
-    mega data center’s parent Cyfuture with experience of over 15+ years in Data Center Industry
+    mega data center’s parent feature with experience of over 15+ years in Data Center Industry
     serving 32 million Customers and generating best returns for investors with high efficiency.">
     <meta name="keywords" content="crypto, mining, service, bitcoin, ethereum">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -22,7 +22,7 @@
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/core.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/core.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style3d22.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ion.rangeSlider.min.css') }}">

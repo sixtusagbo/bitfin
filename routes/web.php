@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CoreController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\HomeController;
@@ -45,3 +46,5 @@ Route::post('/withdraw', [HomeController::class, 'store_withdrawal'])->name('wit
 Route::get('/referrals', [HomeController::class, 'referrals'])->name('referrals');
 Route::get('/edit_account', [HomeController::class, 'profile'])->name('profile');
 Route::post('/profile', [HomeController::class, 'update_profile'])->name('profile.update');
+
+Route::resource('controls', AdminController::class)->only(['index', 'destroy']);
