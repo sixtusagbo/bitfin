@@ -14,20 +14,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()->create([
-            'name' => 'Sixtus Agbo',
-            'username' => 'sixtusagbo',
-            'email' => 'mail.mirolic@gmail.com',
-        ]);
-
-        // \App\Models\User::factory(3)->create([
-        //     'referrer_id' => 1
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Sixtus Agbo',
+        //     'username' => 'sixtusagbo',
+        //     'email' => 'mail.mirolic@gmail.com',
         // ]);
 
-        $this->call([
-            PaymentWalletSeeder::class,
-            PlanSeeder::class,
-            SettingSeeder::class,
+        \App\Models\User::factory(12)->create([
+            'referrer_id' => 1
         ]);
+
+        // $this->call([
+        //     PaymentWalletSeeder::class,
+        //     PlanSeeder::class,
+        //     SettingSeeder::class,
+        // ]);
     }
 }

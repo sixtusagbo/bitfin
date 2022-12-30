@@ -8,6 +8,5 @@
     <ul>
         <li class="eight"><a href="{{ url('/controls') }}">Admin Panel</a></li>
         <li class="seven"><a href="{{ url('/wallets') }}">Payment Addresses</a></li>
-        <li class="two"><a href="{{ url('/fin_settings') }}">Referral Settings</a></li>
     </ul>
 </div>

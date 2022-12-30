@@ -104,6 +104,10 @@
             </div>
         </div>
 
+        @if (session('success'))
+            <h4 class="badge bg-info p-2">{{ session('success') }}</h4>
+        @endif
+
         @yield('content')
 
         <div class="footerwrap">
