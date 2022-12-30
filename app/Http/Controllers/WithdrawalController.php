@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
-use App\Models\PaymentWallet;
 use App\Models\User;
-use App\Notifications\DepositApprovedNotification;
-use App\Notifications\PlanCompletedNotification;
+use App\Models\Withdrawal;
+use App\Notifications\WithdrawalApprovedNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 
-class PaymentController extends Controller
+class WithdrawalController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -34,15 +32,13 @@ class PaymentController extends Controller
             return redirect('/')->with('error', 'Unauthorized Page');
         }
 
-        $payments = Payment::latest()->paginate(10);
-        $wallets = PaymentWallet::all();
+        $withdrawals = Withdrawal::latest()->paginate(10);
 
         $data = [
-            'payments' => $payments,
-            'wallets' => $wallets,
+            'withdrawals' => $withdrawals,
         ];
 
-        return view('admin.credits')->with($data);
+        return view('admin.debits')->with($data);
     }
 
     /**
@@ -61,20 +57,16 @@ class PaymentController extends Controller
             return redirect('/')->with('error', 'Unauthorized Page');
         }
 
-        $payment = Payment::find($id);
-        $user = User::find($payment->user->id);
+        $withdrawal = Withdrawal::find($id);
+        $user = User::find($withdrawal->user->id);
 
-        $payment->status = $request->input('status');
+        $withdrawal->status = $request->input('status');
 
-        if ($payment->status == 1) {
-            Notification::send($user, new DepositApprovedNotification($payment));
+        if ($withdrawal->status == 1) {
+            Notification::send($user, new WithdrawalApprovedNotification($withdrawal));
         }
 
-        if ($payment->status == 2) {
-            Notification::send($user, new PlanCompletedNotification($payment));
-        }
-
-        return redirect()->route('credits.index')->with('success', 'Payment successfuly updated');
+        return redirect()->route('debits.index')->with('success', 'Withdrawal successfuly updated');
     }
 
     /**
@@ -92,9 +84,9 @@ class PaymentController extends Controller
             return redirect('/')->with('error', 'Unauthorized Page');
         }
 
-        $payment = Payment::find($id);
-        $payment->delete();
+        $withdrawal = Withdrawal::find($id);
+        $withdrawal->delete();
 
-        return redirect()->route('credits.index')->with('success', 'Payment deleted successfuly');
+        return redirect()->route('credits.index')->with('success', 'Withdrawal deleted successfuly');
     }
 }
