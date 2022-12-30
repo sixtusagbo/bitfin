@@ -5,6 +5,7 @@ use App\Http\Controllers\CoreController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\WalletController;
 use App\Http\Controllers\WithdrawalController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +53,4 @@ Route::post('/profile', [HomeController::class, 'update_profile'])->name('profil
 Route::resource('controls', AdminController::class)->only(['index', 'destroy']);
 Route::resource('credits', PaymentController::class)->only(['index', 'update', 'destroy']);
 Route::resource('debits', WithdrawalController::class)->only(['index', 'update', 'destroy']);
+Route::resource('wallets', WalletController::class)->only(['index', 'update']);
