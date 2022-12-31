@@ -286,7 +286,7 @@
                                         After
                                         Complete Mining Cycle</li>
                                     <li><img src="{{ asset('images/tick.svg') }}" alt=""> Direct Referral
-                                        Bonus: <strong class="ml-1"> @money(config('myglobals.ref_worth'))</strong>
+                                        Bonus: <strong class="ml-1"> {{ config('myglobals.ref_worth') }}</strong>
                                     </li>
                                     <li><img src="{{ asset('images/tick.svg') }}" alt=""> Withdrawal Charges:
                                         <strong class="ml-1">
@@ -326,20 +326,8 @@
                         </script>
                         <!-- CryptoRival Calculator Widget END -->
                 </center>
-
-                <br>
-                <br>
             </div>
         </section>
-
-        <div class="container">
-            <iframe width="100%" height="315" src="{{ config('myglobals.socials.youtube') }}"
-                title="Bitcoin Financial company" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <br><br>
 
         <section class="section-sp bg-black wow fadeInUp" style="visibility: hidden; animation-name: none;">
             <div class="container">

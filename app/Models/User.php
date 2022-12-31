@@ -102,7 +102,7 @@ class User extends Authenticatable
      */
     public function getEarningsAttribute()
     {
-        $userReferralEarnings = config('myglobals.ref_worth') * $this->referrals->count();
+        $userReferralEarnings = 20 * $this->referrals->count();
         $completedPlans = $this->payments->where('status', 2);
         $planEarnings = 0;
         foreach ($completedPlans as $payment) {

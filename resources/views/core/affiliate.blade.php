@@ -29,7 +29,8 @@
                 a unique referral link; after someone registers through your link, that person becomes your
                 referral.</p>
             <p><b>Referral income:</b> As and when a member refers another member for investing under his/her
-                own sponsor ID, the sponsor receives @money(config('myglobals.ref_worth')) as referral income on the member’s investment.
+                own sponsor ID, the sponsor receives {{ config('myglobals.ref_worth') }} as referral income on the member’s
+                investment.
                 Referral income is pooled instantly. You do not need to have an active deposit on your ID to
                 be eligible to get referral income. The referral income will be credited directly to the e-wallet
                 upon the completion of the registration and investment.</p>

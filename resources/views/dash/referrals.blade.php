@@ -24,7 +24,7 @@
                             <div class="left">Total Referrals
                                 <strong>{{ Auth::user()->referrals->count() }}(Active)</strong>
                             </div>
-                            <div class="right">Earned Commission <strong>@money(Auth::user()->referrals->count() * config('myglobals.ref_worth'))</strong></div>
+                            <div class="right">Earned Commission <strong>@money(Auth::user()->referrals->count() * 10)</strong></div>
                         </div>
                     </div>
                 </div>

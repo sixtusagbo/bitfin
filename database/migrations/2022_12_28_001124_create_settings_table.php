@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('youtube_video')->nullable();
             $table->string('currency')->nullable();
-            $table->decimal('referral_worth')->nullable();
+            $table->string('referral_worth')->nullable();
             $table->decimal('withdrawal_charge')->nullable();
             $table->decimal('min_investment')->nullable();
             $table->decimal('min_withdrawal')->nullable();
