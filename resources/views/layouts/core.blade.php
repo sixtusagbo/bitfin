@@ -33,6 +33,13 @@
 
 <body>
 
+    @if (!Request::is('/'))
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+        </div>
+        <!-- Top Bar End -->
+    @endif
+
     <!-- Nav Bar Start -->
     <div class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">

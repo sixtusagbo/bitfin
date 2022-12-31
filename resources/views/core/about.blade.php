@@ -1,35 +1,8 @@
 @extends('layouts.core')
 
 @section('content')
-    <section class="page-header hdr-company">
+    <section class="about mt-125">
         <div class="container">
-            <div class="page-title float-left d-inline-block mt-md-5">
-                <h1>About Us</h1>
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>Company</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>About Us</li>
-                </ul>
-            </div>
-            <div class="clearfix d-block d-sm-none"></div>
-        </div>
-    </section>
-
-
-
-    <section class="section-sp top-pad-20">
-        <div class="container wow fadeInUp" data-wow-delay="0.2s"
-            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
             <div class="row">
                 <div class="col-lg-6">
                     <p>{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and
@@ -43,85 +16,26 @@
                         high efficiencies.</p>
                 </div>
                 <div class="col-lg-3 col-md-3 top-mb-25">
-                    <div class="vt-com__crt">
-                        <a href="#" data-toggle="modal" data-target="#vtCertModelUSA">
-                            <img src="{{ asset('images/certificate/cert-scrshot-usa.jpg') }}" alt=""
-                                class="cert-sm">
+                    <div class="">
+                        <a href="#">
+                            <img src="{{ asset('images/certificate/cert-scrshot-usa.jpg') }}" alt="" class="w-100">
                         </a>
-
-                        <div class="modal fade" id="vtCertModelUSA" tabindex="-1" role="dialog"
-                            aria-labelledby="vtCertModelUSALabel" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                        <div class="vt-modl__crt">
-                                            <img src="{{ asset('images/certificate/cert-scrshot-usa.jpg') }}" alt=""
-                                                width="100%">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
 
                         <div class="com-dtl gp-tp-2 mt-3">
                             <h3>ASIC ID</h3>
-                            <p>20 187 420 352</p>
-                        </div>
-                        <div class="btn-g">
-                            <a href="https://find-and-update.company-information.service.gov.uk/company/13426240"
-                                target="_blank">More Info<svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-chevron-right feather-icon">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg></a>
+                            <p>90 763 781 563</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 top-mb-25">
-                    <div class="vt-com__crt">
-                        <a href="#" data-toggle="modal" data-target="#vtCertModel">
-                            <img src="{{ asset('images/certificate/cert-scrshot-01.jpg') }}" alt="" class="cert-sm">
+                    <div class="">
+                        <a href="#">
+                            <img src="{{ asset('images/certificate/cert-scrshot-01.jpg') }}" alt="" class="w-100">
                         </a>
-
-                        <div class="modal fade" id="vtCertModel" tabindex="-1" role="dialog"
-                            aria-labelledby="vtCertModelLabel" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                        <div class="vt-modl__crt">
-                                            <img src="{{ asset('images/certificate/cert-scrshot-01.jpg') }}"
-                                                alt="" width="100%">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
 
                         <div class="com-dtl gp-tp-2 mt-3">
                             <h3>ISSURANCE ID</h3>
                             <p>81 175 311 937</p>
-                        </div>
-                        <div class="btn-g">
-                            <a href="https://find-and-update.company-information.service.gov.uk/company/13426240"
-                                target="_blank">More Info<svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-chevron-right feather-icon">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg></a>
                         </div>
                     </div>
                 </div>
@@ -177,68 +91,85 @@
         </div>
     </section>
 
-    <section class="section-sp bg-black wow fadeInUp" style="visibility: hidden; animation-name: none;">
+    <!-- Mining Farm Start -->
+    <section class="mining" id="mining">
         <div class="container">
-            <h1 class="team-home text-center text-white">Our Mining Farm</h1>
+            <div class="section-header">
+                <p>Mining</p>
+                <h2>Our Mining Farm</h2>
+            </div>
             <div class="row clearfix">
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team2.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team2.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team3.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team3.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team14.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team14.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team5.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team5.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team6.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team6.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team7.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team7.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team10.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team10.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team11.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team11.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
 
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3 offset-md-3 offset-lg-3">
-                    <a href="#"><img src="{{ asset('images/team/team12.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team12.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-3 mb-3">
-                    <a href="#"><img src="{{ asset('images/team/team13.jpg') }}" class="img-fluid"></a>
+                    <a href="{{ route('register') }}" data-aos="fade-up"><img src="{{ asset('images/team/team13.jpg') }}"
+                            class="img-fluid"></a>
                 </div>
 
             </div>
         </div>
     </section>
+    <!-- Mining Farm End -->
 
-    <section class="section-sp border-bt section-dark wow fadeInUp"
-        style="visibility: visible; animation-name: fadeInUp;">
+    <section class="mt-5">
         <div class="container">
+            <div class="section-header">
+                <p>Payment Methods</p>
+                <h2>Supported Payment Methods</h2>
+            </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="pay-m">
-                        <h1>Supported Payment Methods</h1>
                         <h4>Simple &amp; secure access to buy, sell <br> and use Bitcoin</h4>
                         <div class="paylist">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <ul>
+                                    <ul class="list-unstyled">
                                         <li><img src="{{ asset('images/crypto/btc-logo.png') }}" alt=""> Bitcoin
                                         </li>
                                         <li><img src="{{ asset('images/crypto/eth-logo.png') }}" alt=""> Ethereum
@@ -252,7 +183,6 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="pay-m-img">
-
                         <div class="img-100 xs-top-25">
                             <img src="{{ asset('images/bitcoin-2.jpg') }}" alt="">
                         </div>
