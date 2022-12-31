@@ -3,7 +3,11 @@
 @section('content')
     <section class="about mt-125">
         <div class="container">
-            <div class="row">
+            <div class="section-header">
+                <p>About</p>
+                <h2>Learn About Us</h2>
+            </div>
+            <div class="row" data-aos="fade-up">
                 <div class="col-lg-6">
                     <p>{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and
                         5
@@ -40,13 +44,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row inv-top">
+            <div class="row" data-aos="fade-up">
                 <div class="col-lg-6">
                     <div class="img-100">
                         <img src="{{ asset('images/abour-page.jpg') }}" alt="" draggable="false">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-up">
                     <p>Our mission is to spread the benefits of cryptocurrency CLOUD MINING as wide as we can. We hope
                         to make everyone a beneficiary of our devices in depth knowledge of cryptocurrency by standing
                         in between to help our investor get the best out of it. You do not need any knowledge of how

@@ -1,33 +1,14 @@
 @extends('layouts.core')
 
 @section('content')
-    <section class="page-header hdr-company">
+    <section class="about mt-125">
         <div class="container">
-            <div class="page-title float-left d-inline-block">
-                <h1>Why Choose Us</h1>
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>Company</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>Why Choose Us</li>
-                </ul>
+            <div class="section-header">
+                <p>Why Us</p>
+                <h2>Why Choose Us</h2>
             </div>
-            <div class="clearfix d-block d-sm-none"></div>
-        </div>
-    </section>
-
-    <section class="section-sp">
-        <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-            <p>We are highly experienced in offering a variety of consulting service for more than 50 retirement plan
+            <p data-aos="fade-up">We are highly experienced in offering a variety of consulting service for more than 50
+                retirement plan
                 platforms including 401(k), 403(b), 457, Profit Sharing, Defined Benefit and ESOPs. We service qualified
                 plans with assets in excess of $70 Billion. Plus, Mining has excellent working relationships with dozens
                 of investment companies so your provider likely already knows us. This inclusive market knowledge also
@@ -39,12 +20,12 @@
                 We provide a multi-algorithm, multi-coin cloud mining service using the latest technology for most
                 secured and efficient outputs.</p>
             <div class="row inv-top">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-up">
                     <div class="img-100">
                         <img src="{{ asset('images/why-1.jpg') }}" alt="" draggable="false">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-up">
                     <p>Mining is done by specialized computers. The role of miners is to secure the network and to
                         process every Bitcoin transaction. Here in {{ config('myglobals.app_name') }} platform , we achieve
                         this by solving a computational problems which allows us to chain together blocks of
@@ -52,7 +33,7 @@
                         fees.</p>
                 </div>
             </div>
-            <div class="row inv-top">
+            <div class="row mt-4" data-aos="fade-up">
                 <div class="col-lg-6 order-sm-12">
                     <div class="img-100">
                         <img src="{{ asset('images/why-2.jpg') }}" alt="" draggable="false">
