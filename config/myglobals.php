@@ -10,7 +10,7 @@
     'youtube' => 'https://www.youtube.com/embed/WrgwWDszPMs?autoplay=1',
   ),
   'currency' => '$',
-  'ref_worth' => '50.00',
+  'ref_worth' => '10',
   'withdrawal_charge' => '0.00',
   'min_investment' => '100.00',
   'min_withdrawal' => '20.00',

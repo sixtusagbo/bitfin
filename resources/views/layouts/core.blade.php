@@ -2,100 +2,51 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="height: 100%;">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="{{ config('myglobals.app_name') }}">
+    <meta charset="utf-8">
+    <title>{{ config('myglobals.app_name') }}</title>
+    <meta property="og:title" content="{{ config('myglobals.app_name') }}">
+    <meta property="og:description" content="Advance Crypto Mining Service.">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="description"
         content="{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and 5
     mega data center’s parent feature with experience of over 15+ years in Data Center Industry
     serving 32 million Customers and generating best returns for investors with high efficiency.">
     <meta name="keywords" content="crypto, mining, service, bitcoin, ethereum">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="author" content="Bit-fin.co">
 
-    <title>{{ config('myglobals.app_name') }}</title>
+    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
-    <meta property="og:title" content="{{ config('myglobals.app_name') }}">
-    <meta property="og:description" content="Advance Crypto Mining Service.">
-    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200;300;400&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ mix('css/core.css') }}">
-    <link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style3d22.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ion.rangeSlider.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/flipclock.css') }}">
-    <style rel="stylesheet" type="text/css" href="{{ asset('css/eapps.css') }}"></style>
-    <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('js/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('js/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
-    <style rel="stylesheet" type="text/css" href="{{ asset('css/my_custom.css') }}"></style>
+    <!-- My Stylesheets -->
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body style="min-height: 100%; top: 0px;">
+<body>
 
-    <div class="loader-fl" style="display: none;">
-        <img src="{{ asset('images/loader.svg') }}" alt="">
-    </div>
-
-    <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-lg-3">
-                </div>
-                <div class="col-md-9 col-lg-9">
-                    <div class="top-con">
-                        <ul>
-                            <li class="hide-mb"><img src="{{ asset('images/envelope.png') }}" alt="">
-                                support@bit-fin.co
-                            </li>
-
-
-
-                            <li>
-                                <div id="google_translate_element"></div>
-
-                                <script type="text/javascript">
-                                    function googleTranslateElementInit() {
-                                        new google.translate.TranslateElement({
-                                            pageLanguage: 'en',
-                                            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-                                        }, 'google_translate_element');
-                                    }
-                                </script>
-
-
-                                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-                                </script>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container max-height">
-            <div class="logo-main">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/logo.png') }}" alt="" draggable="false">
-                </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                style="">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a href="{{ url('/') }}" class="navbar-brand">
+                <img src="{{ asset('images/logo.png') }}" alt="" draggable="false">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item @if (Request::is('/')) active @endif" id="index">
-                        <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
-                    </li>
 
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="{{ url('/') }}"
+                        class="nav-item nav-link @if (Request::is('/')) active @endif">Home</a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -108,8 +59,8 @@
                             <a class="dropdown-item @if (Request::is('why_us')) active @endif" id="why-us"
                                 href="{{ route('why_us') }}">Why Choose us</a>
 
-                            <a class="dropdown-item @if (Request::is('forex_trading')) active @endif"
-                                id="forex_trading" href="{{ route('forex_trading') }}">Forex Trading</a>
+                            <a class="dropdown-item @if (Request::is('forex_trading')) active @endif" id="forex_trading"
+                                href="{{ route('forex_trading') }}">Forex Trading</a>
                             <a class="dropdown-item @if (Request::is('commitments')) active @endif" id="commitments"
                                 href="{{ route('commitments') }}">Commitments</a>
                             <a class="dropdown-item @if (Request::is('stratagies')) active @endif" id="stratagies"
@@ -140,230 +91,86 @@
                             <script src="//code.tidio.co/bqwkfaba7sy6a2zlvrdxiwbzmz0bsjmw.js" async></script>
                         </li>
                     @endauth
-                    @if (config('myglobals.socials.facebook'))
-                        <li class="nav-item">
-                            <ul class="nav-social">
-                                <li><a href="{{ config('myglobals.socials.twitter') }}"><img
-                                            src="{{ asset('images/tp-t.png') }}" alt=""></a>
-                                </li>
-                                <li><a href="{{ config('myglobals.socials.facebook') }}"><img
-                                            src="{{ asset('images/tp-f.png') }}" alt=""></a>
-                                </li>
-                                <li><a href="{{ config('myglobals.socials.instagram') }}"><img
-                                            src="{{ asset('images/tp-i.png') }}" alt=""></a>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
-
-                </ul>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <!-- Nav Bar End -->
 
     @yield('content')
 
-    <section class="section-sp footer">
+    <!-- Footer Start -->
+    <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="foo-log">
-                        <img src="{{ asset('images/logo.png') }}" alt="">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-contact">
+                                <img src="{{ asset('images/logo.png') }}" alt="" class="w-50">
+                                <p>{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong
+                                    professionals
+                                    and 5
+                                    mega data center’s parent Cyfuture with experience of over 15+ years in Data Center
+                                    Industry
+                                    serving 32 million Customers and generating best returns for investors with high
+                                    efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="footer-link">
+                                <h2>Quick Links</h2>
+                                <a href="{{ route('affiliate') }}">Affiliate</a>
+                                <a href="{{ route('faq') }}">FAQ</a>
+                                <a href="{{ route('contact') }}">Contact</a>
+                            </div>
+                        </div>
                     </div>
-                    <p>{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals
-                        and 5
-                        mega data center’s parent Cyfuture with experience of over 15+ years in Data Center Industry
-                        serving 32 million Customers and generating best returns for investors with high efficiency.</p>
                 </div>
-                <div class="col-md-3">
-                    <h4>Quick Links</h4>
-                    <ul>
-
-                        <li><a href="{{ route('affiliate') }}">Affiliate</a></li>
-                        <li><a href="{{ route('faq') }}">FAQ</a></li>
-                        <li><a href="{{ route('contact') }}">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h4>Company</h4>
-                    <ul>
-
-                        <li><a href="{{ route('about') }}">About us</a></li>
-                        <li><a href="{{ route('why_us') }}">Why Choose Us</a></li>
-
-                        <li><a href="{{ route('forex_trading') }}">Forex Trading</a></li>
-                        <li><a href="{{ route('commitments') }}">Commitments</a></li>
-                        <li><a href="{{ route('stratagies') }}">Strategies</a></li>
-                    </ul>
-
-                </div>
-                <div class="col-md-3">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="{{ route('security') }}">Security Information</a></li>
-
-                        <li><a href="{{ route('terms') }}">Terms &amp; Conditions</a></li>
-                    </ul>
-                    <div class="mt-3">
-                        <a href="https://www.dmca.com/site-report/www.richnetfunds.com"
-                            title="DMCA.com Protection Status" class="dmca-badge" target="_blank">
+                <div class="col-lg-5">
+                    <div class="footer-link">
+                        <h2>Legal</h2>
+                        <a href="{{ route('security') }}">Security Information</a>
+                        <a href="{{ route('terms') }}">Terms &amp; Conditions</a>
+                        <div class="mt-3">
                             <img src="{{ asset('images/dmca.png') }}" alt="DMCA.com Protection Status"
-                                width="100px"></a>
+                                width="100px">
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-    </section>
-
-    <div class="copyrights">
-        <div class="container">
-            <ul>
-                <li>
-                    <p>&copy; Copyright 2022 bit-fin.co All rights reserved.</p>
-                </li>
-                <li>
-                    <p><img src="{{ asset('images/envelope.png') }}" alt=""> support@bit-fin.co</p>
-                </li>
-            </ul>
+        <div class="container copyright">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-light">&copy; 2022 <a href="{{ url('/') }}">bit-fin.co</a> All Right
+                        Reserved</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-light"><img src="{{ asset('images/envelope.png') }}" alt="">
+                        support@bit-fin.co</p>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Footer End -->
 
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-    <div class="fixed-buttons" style="position:fixed; z-index:8; bottom: 13px; left:13px;">
-        <a class="button button-primary" href="{{ route('login') }}" style="padding:12px 25px">Sign In</a>
-        <a class="button button-secondary" href="{{ route('register') }}"
-            style="padding:12px 25px; margin-top: 0; margin-left: 10px; background: #0B0E11;">Register</a>
-    </div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('js/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/lib/counterup/counterup.min.js') }}"></script>
 
-    <!-- Other Scripts Start -->
+    <!-- Contact Javascript File -->
+    <script src="{{ asset('js/mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ asset('js/mail/contact.js') }}"></script>
 
-    <script src="{{ asset('js/lib/jquery-3.3.1/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/popper.js-1.12.9/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('js/lib/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/ion.rangeSlider.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/range-slider.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/lang-init.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/slick.js') }}" type="text/javascript"></script>
-    <script src="https://unpkg.com/feather-icons" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/feather.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/wow.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/page-loader.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/flipclock.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lib/beacon.min.js') }}"
-        data-cf-beacon="{&quot;rayId&quot;:&quot;679894a50d5e0736&quot;,&quot;token&quot;:&quot;ae18eedf3f954d6cb0e8784b192469b0&quot;,&quot;version&quot;:&quot;2021.7.0&quot;,&quot;si&quot;:10}"
-        defer></script>
-    <script src="{{ asset('js/lib/jquery.fancybox.min.js') }}" type="text/javascript"></script>
-
-    <!-- Other Scripts End -->
-
-    <script type="text/javascript">
-        $('#popup-modal').modal('show');
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.rnf-cs').slick({
-                slidesToShow: 6,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: false,
-                dots: false,
-                responsive: [{
-                        breakpoint: 768,
-                        settings: "unslick"
-                    },
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: false
-                        }
-                    }
-                ]
-            });
-            $('.rnf-videos').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: false,
-                dots: false,
-                responsive: [{
-                        breakpoint: 768,
-                        settings: "unslick"
-                    },
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: false
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        feather.replace();
-    </script>
-
-    <script type="text/javascript">
-        wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 100,
-        });
-        wow.init();
-    </script>
-
-    <script type="text/javascript">
-        $(document).on('ready', function() {
-
-            $(".variable").slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear'
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        var clock;
-
-        $(document).ready(function() {
-
-            // Grab the current date
-            var currentDate = new Date();
-
-            // Set some date in the past. In this case, it's always been since Jan 1
-            var pastDate = new Date(Date.UTC(2021, 4, 27, 5, 0, 0));
-
-            // Calculate the difference in seconds between the future and current date
-            var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
-
-            // Instantiate a coutdown FlipClock
-            clock = $('.clock').FlipClock(diff, {
-                clockFace: 'DailyCounter'
-            });
-
-            // Instantiate a coutdown FlipClock
-            clock = $('.clock-days').FlipClock(diff, {
-                clockFace: 'DailyCounter'
-            });
-        });
-    </script>
-
+    <!-- My Javascript -->
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>

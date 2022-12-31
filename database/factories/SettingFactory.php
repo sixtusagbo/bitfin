@@ -21,7 +21,7 @@ class SettingFactory extends Factory
             'email' => 'support@bit-fin.co',
             'youtube_video' => 'https://www.youtube.com/embed/WrgwWDszPMs?autoplay=1',
             'currency' => '$',
-            'referral_worth' => 50,
+            'referral_worth' => 10,
             'withdrawal_charge' => 0,
             'min_investment' => 100,
             'min_withdrawal' => 20,
