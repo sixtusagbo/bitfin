@@ -36,7 +36,7 @@ Route::get('/terms_and_conditions', [CoreController::class, 'terms'])->name('ter
 Route::get('/rules', [DashController::class, 'rules'])->name('rules');
 Route::get('/support', [DashController::class, 'support'])->name('support');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/deposit', [HomeController::class, 'deposit'])->name('deposit');
