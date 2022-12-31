@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\App;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +22,9 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => null
         ]);
 
-        \App\Models\User::factory(12)->create();
+        if (App::environment('local')) {
+            \App\Models\User::factory(12)->create();
+        }
 
         $this->call([
             PaymentWalletSeeder::class,
