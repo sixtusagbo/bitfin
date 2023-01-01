@@ -30,6 +30,7 @@ Route::get('/stratagies', [CoreController::class, 'stratagies'])->name('stratagi
 Route::get('/affiliate', [CoreController::class, 'affiliate'])->name('affiliate');
 Route::get('/faq', [CoreController::class, 'faq'])->name('faq');
 Route::get('/contact', [CoreController::class, 'contact'])->name('contact');
+Route::post('/contact', [CoreController::class, 'send_contact']);
 Route::get('/security', [CoreController::class, 'security'])->name('security');
 Route::get('/terms_and_conditions', [CoreController::class, 'terms'])->name('terms');
 

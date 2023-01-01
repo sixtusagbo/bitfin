@@ -7,20 +7,21 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class AccountChangeNotification extends Notification
+class ContactNotification extends Notification
 {
     use Queueable;
 
-    protected $user;
+    protected $config;
 
     /**
      * Create a new notification instance.
      *
+     * @param array $config
      * @return void
      */
-    public function __construct()
+    public function __construct(array $config)
     {
-        $this->user = auth()->user();
+        $this->config = $config;
     }
 
     /**
@@ -43,13 +44,12 @@ class AccountChangeNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Dear **' . $this->user->name . '**,')
-            ->subject('Account Details Has Been Changed')
-            ->line('Your account data has been changed from ip: ' . request()->getClientIp())
-            ->line('Contact us immediately, if you did not authorize this change.')
-            ->line('You can always reach us via our email:')
-            ->line(config('myglobals.socials.email'))
-            ->line('Thank you for investing with us 🚀');
+            ->greeting('Hi, **Administrator**')
+            ->subject($this->config['subject'])
+            ->line('Contact message from ' . $this->config['name'])
+            ->line('Email: ' . $this->config['email'])
+            ->line('Message: **' . $this->config['email'] . '**')
+            ->line('Thank you for being our able admin🚀✅');
     }
 
     /**

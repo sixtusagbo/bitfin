@@ -1,69 +1,59 @@
 @extends('layouts.core')
 
 @section('content')
-    <section class="page-header hdr-con">
+    <!-- Contact Start -->
+    <div class="contact mt-125">
         <div class="container">
-            <div class="page-title float-left d-inline-block">
-                <h1>Contact</h1>
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>Contact</li>
-                </ul>
+            <div class="section-header">
+                <p>Get In Touch</p>
+                <h2>Get In Touch For Any Query</h2>
             </div>
-            <div class="clearfix d-block d-sm-none"></div>
-        </div>
-    </section>
-
-    <div class="p-5 d-flex justify-content-center">
-        <div class="col-lg-6 col-md-6 order-sm-1 top-40-mb">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="contact contact--address">
-                        <h4>Address</h4>
-                        <p>13b Gatwick Gate Industrial Estate, Lowfield Heath, Crawley, England</p>
-                        <br>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="contact contact--cnum">
-                        <h4>ASIC Registration ID</h4>
-                        <p>Company ID - 12932219</p>
-
-                        <div class="btn-g mt-4">
-                            <a href="{{ asset('images/certificate/cert-scrshot-usa.jpg') }}" target="_blank">See Details<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-right feather-icon">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg></a>
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fa fa-envelope"></i>
                         </div>
-                    </div>
-                    <div class="contact contact--cnum mt-3">
-                        <h4>INSURANCE ID</h4>
-                        <p>ID - 81 175 311 937</p>
-                        <p>
-                        <div id="ytWidget"></div>
-                        <script
-                            src="../translate.yandex.net/website-widget/v1/widget56725672.js?widgetId=ytWidget&amp;pageLang=en&amp;widgetTheme=light&amp;autoMode=true"
-                            type="text/javascript"></script>
-                        </p>
-                        <div class="btn-g mt-4">
-                            <a href="{{ asset('images/certificate/cert-scrshot-01.jpg') }}" target="_blank">See Details<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-right feather-icon">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg></a>
+                        <div class="contact-text">
+                            <h3>Email for Information</h3>
+                            <p>{{ config('myglobals.socials.email') }}</p>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-7">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" method="POST" id="contactForm" action="{{ route('contact') }}"
+                            novalidate="novalidate">
+                            @csrf
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                    required="required" data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                    required="required" data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                    required="required" data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" id="message" placeholder="Message" required="required"
+                                    data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
+    <!-- Contact End -->
 @endsection

@@ -1,5 +1,9 @@
 <?php return array (
   'app_name' => 'Bitcoin Financial Company',
+  'admin' => 
+  array (
+    'email' => NULL,
+  ),
   'socials' => 
   array (
     'facebook' => NULL,

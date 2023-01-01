@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class CoreController extends Controller
 {
@@ -99,6 +100,26 @@ class CoreController extends Controller
     public function contact()
     {
         return view('core.contact');
+    }
+
+    /**
+     * Send contact message.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function send_contact(Request $request)
+    {
+        $values = $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
+        Notification::route('mail', config('myglobals.admin.email', 'mail.mirolic@gmail.com'))->notify($values);
+
+        return response('Okay, Message sent');
     }
 
     /**

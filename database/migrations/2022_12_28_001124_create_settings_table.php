@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('app_name');
             $table->string('email')->nullable();
+            $table->string('admin_email')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();

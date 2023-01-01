@@ -29,6 +29,10 @@ class SettingServiceProvider extends ServiceProvider
         $global_variables = [
             'app_name' => $settings->app_name,
 
+            'admin' => [
+                'email' => $settings->admin_email,
+            ],
+
             /*
           |--------------------------------------------------------------------------
           | Social Media Links

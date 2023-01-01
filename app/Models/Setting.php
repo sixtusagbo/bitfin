@@ -17,6 +17,7 @@ class Setting extends Model
     protected $fillable = [
         'app_name',
         'email',
+        'admin_email',
         'facebook',
         'twitter',
         'instagram',
