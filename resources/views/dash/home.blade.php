@@ -1,84 +1,162 @@
 @extends('layouts.dash')
-
 @section('content')
-    <div class="bannerwrap insideheaders">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="bounceInDown wow">My <span>Dashboard</span></h1>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1 class="app-page-title">Overview</h1>
 
-    <div class="accwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    @include('inc.accountnav')
-                </div>
-                <div class="col-lg-9">
-                    <div class="member-container">
-
-                        <div class="main_dash">
-                            <div class="accstats">
-                                <div class="accountbox"><span class="icon"><img
-                                            src="{{ asset('images/auth/accountbox2.png') }}" alt=""></span>
-                                    <p>Registration Date</p>
-                                    <h4>{{ Auth::user()->created_at->toFormattedDateString() }}</h4>
-                                </div>
-                                <div class="accountbox"><span class="icon"><img
-                                            src="{{ asset('images/auth/accountbox3.png') }}" alt=""></span>
-                                    <p>Last Access</p>
-                                    <h4>{{ Auth::user()->last_access ? Auth::user()->last_access->toDayDateTimeString() : Carbon\Carbon::now()->toDayDateTimeString() }}
-                                    </h4>
-                                </div>
-                                <div class="accountbox"><span class="icon"><img
-                                            src="{{ asset('images/auth/accountbox4.png') }}" alt=""></span>
-                                    <p>Your Ip</p>
-                                    <h4>{{ request()->getClientIp() }}</h4>
-                                </div>
-                            </div>
-                            <div class="accdetailsbox" style="margin-bottom:20px; margin-top:0px;">
-                                <div class="head">Referral link <input type="text"
-                                        style="display:inline-block; width:100%; margin-top:2px;" readonly="readonly"
-                                        value="{{ Auth::user()->referral_link }}"></div>
-                            </div>
-                            <div class="acchead">
-                                <div class="left">Account Balance <strong>@money(Auth::user()->account_balance)</strong></div>
-                                <div class="right">Earned Total <strong> @money(Auth::user()->earnings) </strong></div>
-                            </div>
-                            <div class="accdetailsbox">
-                                <div class="head">Deposit Statements <span class="icon"><img
-                                            src="{{ asset('images/auth/depstatement.png') }}" alt=""></span></div>
-                                <div class="infos">
-                                    <ul>
-                                        <li>Active Deposit <strong>@money($total_deposits)</strong></li>
-                                        <li>Last Deposit <strong>@money($last_deposit)</strong></li>
-                                        <li>Total Deposit <strong>@money($total_deposits)</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accdetailsbox">
-                                <div class="head">Withdrawal Statements <span class="icon"><img
-                                            src="{{ asset('images/auth/withdrwstatement.png') }}" alt=""></span>
-                                </div>
-                                <div class="infos">
-                                    <ul>
-                                        <li>Pending Withdrawal <strong>@money(Auth::user()->pending_withdrawals)</strong></li>
-                                        <li>Last Withdrawal <strong>@money($last_withdrawal)</strong></li>
-                                        <li>Withdrew Total <strong>@money($total_withdrawals)</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
+    <div class="row g-4 mb-4 justify-content-center">
+        <div class="col-6 col-lg-4">
+            <div class="app-card app-card-stat shadow-sm h-100">
+                <div class="app-card-body p-3 p-lg-4">
+                    <h4 class="stats-type mb-1">Registration Date</h4>
+                    <div class="stats-figure">{{ Auth::user()->created_at->toFormattedDateString() }}</div>
+                    <div class="stats-meta text-success">
+                        <img src="{{ asset('images/auth/accountbox2.png') }}" alt="">
                     </div>
                 </div>
+                <!--//app-card-body-->
+                <a class="app-card-link-mask" href="#"></a>
+            </div>
+            <!--//app-card-->
+        </div>
+        <!--//col-->
+
+        <div class="col-6 col-lg-4">
+            <div class="app-card app-card-stat shadow-sm h-100">
+                <div class="app-card-body p-3 p-lg-4">
+                    <h4 class="stats-type mb-1">Last Access</h4>
+                    <div class="stats-figure">
+                        {{ Auth::user()->last_access ? Auth::user()->last_access->toDayDateTimeString() : Carbon\Carbon::now()->toDayDateTimeString() }}
+                    </div>
+                    <div class="stats-meta text-success">
+                        <img src="{{ asset('images/auth/accountbox3.png') }}" alt="">
+                    </div>
+                </div>
+                <!--//app-card-body-->
+                <a class="app-card-link-mask" href="#"></a>
+            </div>
+            <!--//app-card-->
+        </div>
+        <!--//col-->
+        <div class="col-6 col-lg-4">
+            <div class="app-card app-card-stat shadow-sm h-100">
+                <div class="app-card-body p-3 p-lg-4">
+                    <h4 class="stats-type mb-1">Projects</h4>
+                    <div class="stats-figure">23</div>
+                    <div class="stats-meta text-success">
+                        <img src="{{ asset('images/auth/accountbox4.png') }}" alt="">
+                    </div>
+                </div>
+                <!--//app-card-body-->
+                <a class="app-card-link-mask" href="#"></a>
+            </div>
+            <!--//app-card-->
+        </div>
+        <!--//col-->
+    </div>
+    <!--//row-->
+
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-lg-12">
+            <div class="app-card h-100 shadow-sm">
+                <div class="app-card-header p-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <h4 class="app-card-title">Referral Link</h4>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//app-card-header-->
+                <div class="app-card-body p-3 p-lg-4">
+                    <input type="text" class="form-control" readonly="readonly"
+                        value="{{ Auth::user()->referral_link }}">
+                </div>
+                <!--//app-card-body-->
+
             </div>
         </div>
     </div>
-    <div class="strip">&nbsp;</div>
-    <div class="strip">&nbsp;</div>
+    <!--//row-->
+
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-lg-12">
+            <div class="app-card h-100 shadow-sm">
+                <div class="app-card-header p-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <h4 class="app-card-title">Deposit Statements</h4>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//app-card-header-->
+                <div class="app-card-body p-3 p-lg-4">
+                    <div class="table-responsive">
+                        <table class="table table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <td>Active Deposit</td>
+                                    <td class="stat-cell">@money($total_deposits)</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Deposit</td>
+                                    <td class="stat-cell">@money($last_deposit)</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Deposit</td>
+                                    <td class="stat-cell">@money($total_deposits)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//table-responsive-->
+                </div>
+                <!--//app-card-body-->
+
+            </div>
+        </div>
+    </div>
+    <!--//row-->
+
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-lg-12">
+            <div class="app-card h-100 shadow-sm">
+                <div class="app-card-header p-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <h4 class="app-card-title">Withdrawal Statements</h4>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//app-card-header-->
+                <div class="app-card-body p-3 p-lg-4">
+                    <div class="table-responsive">
+                        <table class="table table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <td>Pending Withdrawal</td>
+                                    <td class="stat-cell">@money(Auth::user()->pending_withdrawals)</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Withdrawal</td>
+                                    <td class="stat-cell">@money($last_withdrawal)</td>
+                                </tr>
+                                <tr>
+                                    <td>Withdrew Total</td>
+                                    <td class="stat-cell">@money($total_withdrawals)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//table-responsive-->
+                </div>
+                <!--//app-card-body-->
+
+            </div>
+        </div>
+    </div>
+    <!--//row-->
 @endsection
