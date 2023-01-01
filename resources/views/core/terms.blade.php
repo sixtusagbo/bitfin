@@ -1,27 +1,12 @@
 @extends('layouts.core')
 
 @section('content')
-    <section class="page-header">
+    <section class="about mt-125">
         <div class="container">
-            <div class="page-title float-left d-inline-block">
-                <h1>Terms and Conditions</h1>
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>Terms and Conditions</li>
-                </ul>
+            <div class="section-header">
+                <p>T &amp; C</p>
+                <h2>Our Terms and Conditions</h2>
             </div>
-            <div class="clearfix d-block d-sm-none"></div>
-        </div>
-    </section>
-
-    <section class="section-sp terms">
-        <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-            <h3>Our Terms and Conditions</h3>
             <p>1. This Agreement is a binding contract between you and us, and it sets out your and our
                 rights and obligations with respect to your membership of {{ config('myglobals.app_name') }} and use of the
                 Platform. In executing this Agreement, you are indicating that you agree to adhere to, and be
@@ -43,7 +28,7 @@
                 enables us to provide services to you and to discharge our obligations to third parties,
                 including relevant stock exchanges, government agencies and regulators.</p>
             <p>6. By accessing this website we assume you accept these terms and conditions. Do not
-                continue to use www.Bit-fin.biz if you do not agree to take all of the terms and
+                continue to use bit-fin.co if you do not agree to take all of the terms and
                 conditions stated on this page. These terms and conditions cannot be altered under any
                 circumstances.</p>
         </div>
