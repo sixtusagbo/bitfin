@@ -1,27 +1,12 @@
 @extends('layouts.core')
 
 @section('content')
-    <section class="page-header hdr-affl">
+    <section class="about mt-125">
         <div class="container">
-            <div class="page-title float-left d-inline-block">
-                <h1>Affiliate</h1>
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevron-right feather-icon">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg></li>
-                    <li>Affiliate</li>
-                </ul>
+            <div class="section-header">
+                <p>Affiliate</p>
+                <h2>Affiliate Program</h2>
             </div>
-            <div class="clearfix d-block d-sm-none"></div>
-        </div>
-    </section>
-
-    <section class="section-sp affl">
-        <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-            <h3>Affiliate Program</h3>
             <p>{{ config('myglobals.app_name') }} offers additional opportunities in the form of referral program and binary
                 matching income. Anybody can become a member of our program by registering to our
                 program. To earn referral income, all you have to do is to share information about our
