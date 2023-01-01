@@ -204,7 +204,7 @@
                             <h4>{{ config('myglobals.ref_worth') }} Direct Referral</h4>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6 col-md-6 mt-3">
                         <div class="ref-min-notice" data-aos="fade-left">
                             <img src="{{ asset('images/refer/money-bag.svg') }}" width="30px">
                             <h4>@money(config('myglobals.min_withdrawal')) Minimum Withdrawal</h4>

@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="height: 100%;">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>{{ config('myglobals.app_name') }}</title>
     <meta property="og:title" content="{{ config('myglobals.app_name') }}">
     <meta property="og:description" content="Advance Crypto Mining Service.">
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="{{ config('myglobals.app_name') }} Platform is a group company of 190, 000+ strong professionals and 5
     mega data center’s parent feature with experience of over 15+ years in Data Center Industry
@@ -29,6 +30,14 @@
 
     <!-- My Stylesheets -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100% !important;
+        }
+    </style>
 </head>
 
 <body>
