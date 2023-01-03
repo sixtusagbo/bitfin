@@ -6,7 +6,7 @@
         <form class="auth-form login-form" method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div class="username mb-3">
+            <div class="email mb-3">
                 <label class="sr-only" for="username">Username</label>
                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
                     name="username" value="{{ old('username') }}" required autocomplete="username" autofocus

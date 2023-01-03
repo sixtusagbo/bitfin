@@ -1,229 +1,140 @@
-@extends('layouts.dash')
+@extends('layouts.auth')
 
 @section('content')
-    <div class="bannerwrap insideheaders">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="bounceInDown wow">New <span>User</span></h1>
+    <h2 class="auth-heading text-center mb-4">Sign up to {{ config('app.name') }}</h2>
+
+    <div class="auth-form-container text-start mx-auto">
+        <form class="auth-form auth-signup-form">
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Your Name</label>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror signup-name"
+                    name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Full name"
+                    autofocus>
+
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Username</label>
+                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
+                    name="username" value="{{ old('username') }}" placeholder="Username" required autocomplete="username"
+                    autofocus>
+
+                @error('username')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Your Email</label>
+                <input id="email" type="email" class="form-control signup-email @error('email') is-invalid @enderror"
+                    name="email" value="{{ old('email') }}" placeholder="Email address" required autocomplete="email">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Retype Email</label>
+                <input id="email_confirmation" type="email" class="form-control" name="email_confirmation"
+                    placeholder="Retype Email" required autocomplete="email">
+            </div>
+            <div class="password mb-3">
+                <label class="sr-only" for="signup-password">Password</label>
+                <input id="password" type="password"
+                    class="form-control signup-password @error('password') is-invalid @enderror" name="password"
+                    placeholder="Password" required autocomplete="new-password">
+
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="password mb-3">
+                <label class="sr-only" for="signup-password">Retype Password</label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
+                    placeholder="Retype Password" required autocomplete="new-password">
+            </div>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Secret Question</label>
+                <input id="secret_question" type="text"
+                    class="form-control @error('secret_question') is-invalid @enderror" name="secret_question"
+                    value="{{ old('secret_question') }}" placeholder="Secret Question" required
+                    autocomplete="secret_question" autofocus>
+
+                @error('secret_question')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Secret Answer</label>
+                <input id="secret_answer" type="text" class="form-control @error('secret_answer') is-invalid @enderror"
+                    name="secret_answer" value="{{ old('secret_answer') }}" placeholder="Secret Answer" required
+                    autocomplete="secret_answer" autofocus>
+
+                @error('secret_answer')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <hr>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Bitcoin - BTC Wallet Address</label>
+                <input id="btc_address" type="text" class="form-control @error('btc_address') is-invalid @enderror"
+                    name="btc_address" value="{{ old('btc_address') }}" placeholder="Bitcoin - BTC Wallet Address"
+                    autocomplete="btc_address" autofocus>
+
+                @error('btc_address')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="email mb-3">
+                <label class="sr-only" for="signup-email">Ethereum - ETH Wallet Address</label>
+                <input id="eth_address" type="text" class="form-control @error('eth_address') is-invalid @enderror"
+                    name="eth_address" value="{{ old('eth_address') }}" placeholder="Ethereum - ETH Wallet Address"
+                    autocomplete="eth_address" autofocus>
+
+                @error('eth_address')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+
+            <div class="extra mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="RememberPassword" required>
+                    <label class="form-check-label" for="RememberPassword">
+                        I agree to {{ config('app.name') }}'s <a href="#" class="app-link">Terms of Service</a> and
+                        <a href="#" class="app-link">Privacy Policy</a>.
+                    </label>
                 </div>
             </div>
-        </div>
-    </div>
+            <!--//extra-->
 
-    <div class="loginwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    &nbsp;
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-container loginpage">
-
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
-
-                            <table width="100%" border=0 cellpadding=4 cellspacing=4>
-                                <tr>
-                                    <td colspan="2">
-                                        <h3><span>Account</span> Information</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="30%">Your Full Name:</td>
-                                    <td>
-                                        <input id="name" type="text"
-                                            class="form-control @error('name') is-invalid @enderror" name="name"
-                                            value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Your Username:
-                                    </td>
-                                    <td>
-                                        <input id="username" type="text"
-                                            class="form-control @error('username') is-invalid @enderror" name="username"
-                                            value="{{ old('username') }}" required autocomplete="username" autofocus>
-
-                                        @error('username')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Define Password:
-                                    </td>
-                                    <td>
-                                        <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                            required autocomplete="new-password">
-
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Retype Password:
-                                    </td>
-                                    <td>
-                                        <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" required autocomplete="new-password">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Your E-mail:
-                                    </td>
-                                    <td>
-                                        <input id="email" type="email"
-                                            class="form-control @error('email') is-invalid @enderror" name="email"
-                                            value="{{ old('email') }}" required autocomplete="email">
-
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Retype E-mail:
-                                    </td>
-                                    <td>
-                                        <input id="email_confirmation" type="email" class="form-control"
-                                            name="email_confirmation" required autocomplete="email">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Secret question:
-                                    </td>
-                                    <td>
-                                        <input id="secret_question" type="text"
-                                            class="form-control @error('secret_question') is-invalid @enderror"
-                                            name="secret_question" value="{{ old('secret_question') }}" required
-                                            autocomplete="secret_question" autofocus>
-
-                                        @error('secret_question')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Secret answer:
-                                    </td>
-                                    <td>
-                                        <input id="secret_answer" type="text"
-                                            class="form-control @error('secret_answer') is-invalid @enderror"
-                                            name="secret_answer" value="{{ old('secret_answer') }}" required
-                                            autocomplete="secret_answer" autofocus>
-
-                                        @error('secret_answer')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td colspan="2">
-                                        <br />
-                                        <h3><span>Payment</span> Systems</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Bitcoin - BTC Wallet Address:
-                                    </td>
-
-                                    <td>
-                                        <input id="btc_address" type="text"
-                                            class="form-control @error('btc_address') is-invalid @enderror"
-                                            name="btc_address" value="{{ old('btc_address') }}" autocomplete="btc_address"
-                                            autofocus>
-
-                                        @error('btc_address')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Ethereum - ETH Wallet Address:
-                                    </td>
-                                    <td>
-                                        <input id="eth_address" type="text"
-                                            class="form-control @error('eth_address') is-invalid @enderror"
-                                            name="eth_address" value="{{ old('eth_address') }}" autocomplete="eth_address"
-                                            autofocus>
-
-                                        @error('eth_address')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" required>
-                                        I agree with
-                                        <a class="small_text" href="{{ url('/rules') }}">
-                                            Terms and conditions
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;
-                                    </td>
-                                    <td>
-                                        <input type=submit value="Register" class=sbmt>
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                </div>
+            <div class="text-center">
+                <button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Sign Up</button>
             </div>
-        </div>
-    </div>
-    <div class="strip">&nbsp;</div>
-    <div class="loginpanelbottoms">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4><span>Already a member?</span> Login Now!</h4>
+        </form>
+        <!--//auth-form-->
 
-                    <a href="{{ route('login') }}">login here</a>
-                </div>
-            </div>
+        <div class="auth-option text-center pt-3 pb-3">Already have an account? <a class="text-link"
+                href="{{ route('login') }}">Log
+                in</a>
         </div>
     </div>
-    <div class="strip">&nbsp;</div>
-    <div class="strip">&nbsp;</div>
+    <!--//auth-form-container-->
 @endsection

@@ -45,7 +45,7 @@
             <!--//flex-column-->
         </div>
         <!--//auth-main-col-->
-        <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
+        <div class="col-12 col-md-5 col-lg-6 auth-background-col">
             <div class="auth-background-holder">
             </div>
             <div class="auth-background-mask"></div>
