@@ -1,104 +1,54 @@
-@extends('layouts.dash')
+@extends('layouts.auth')
 
 @section('content')
-    <div class="bannerwrap insideheaders">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="bounceInDown wow">reset <span>password</span></h1>
-                </div>
+    <h2 class="auth-heading text-center mb-4">Password Reset</h2>
+
+    <div class="auth-form-container text-left">
+
+        <form class="auth-form resetpass-form" method="POST" action="{{ route('password.update') }}">
+            @csrf
+
+            <input type="hidden" name="token" value="{{ $token }}">
+
+            <div class="email mb-3">
+                <label class="sr-only" for="email">Your Email</label>
+                <input id="email" type="email" class="form-control login-email @error('email') is-invalid @enderror"
+                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                    placeholder="Your Email">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
-        </div>
-    </div>
 
-    <div class="strip">&nbsp;</div>
-    <div class="loginwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    &nbsp;
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-container loginpage">
+            <div class="password mb-3">
+                <label class="sr-only" for="password">Your Password</label>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                    name="password" required autocomplete="current-password" placeholder="New Password">
 
-                        <form method="POST" action="{{ route('password.update') }}">
-                            @csrf
-
-                            <input type="hidden" name="token" value="{{ $token }}">
-
-                            <table width="100%" border=0 cellpadding=4 cellspacing=4>
-                                <tr>
-                                    <td>
-                                        <span class="user">
-                                            @if (session('status'))
-                                                <div class="alert alert-success" role="alert">
-                                                    {{ session('status') }}
-                                                </div>
-                                            @endif
-                                            <input id="email" type="email"
-                                                class="form-control @error('email') is-invalid @enderror" name="email"
-                                                value="{{ old('email') }}" required autocomplete="email" autofocus
-                                                placeholder="Email Address">
-
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <span class="password">
-                                            <input id="password" type="password"
-                                                class="form-control @error('password') is-invalid @enderror" name="password"
-                                                required autocomplete="current-password" placeholder="Password">
-
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <span class="password">
-                                            <input id="password-confirm" type="password" class="form-control"
-                                                name="password_confirmation" required autocomplete="new-password"
-                                                placeholder="Retype password">
-                                        </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td align="center">
-                                        <input type=submit value="Reset Password" class="sbmt">
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                </div>
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
-        </div>
-    </div>
-    <div class="strip">&nbsp;</div>
-    <div class="loginpanelbottoms">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4><span>If you are new</span> to Bit-fin</h4>
 
-                    <a href="{{ route('register') }}">Signup here</a>
-                </div>
+            <div class="password mb-3">
+                <label class="sr-only" for="password-confirm">Retype Password</label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required
+                    autocomplete="new-password" placeholder="Retype password">
             </div>
-        </div>
+
+            <!--//form-group-->
+            <div class="text-center">
+                <button type="submit" class="btn app-btn-primary btn-block theme-btn mx-auto">Reset Password</button>
+            </div>
+        </form>
+
+        <div class="auth-option text-center pt-5"><a class="app-link" href="{{ route('login') }}">Log in</a> <span
+                class="px-2">|</span> <a class="app-link" href="{{ route('register') }}">Sign up</a></div>
     </div>
-    <div class="strip">&nbsp;</div>
-    <div class="strip">&nbsp;</div>
+    <!--//auth-form-container-->
 @endsection
