@@ -1,8 +1,8 @@
 <html>
 
 <head>
-    <title>PnL Calculator</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <title>Profit Calculator</title>
+    <link rel="stylesheet" href="{{ asset('css/dash.css') }}">
 </head>
 
 <body>
@@ -16,11 +16,7 @@
             <td><b>{{ $to }}</b></td>
         </tr>
         </tr>
-        <td>Amount(@if ($plan->max_deposit == null)
-                &#x20BF;
-            @else
-                $
-            @endif):</td>
+        <td>Amount:</td>
         <td>
             <input type="text" name="amount" id="amount" value="{{ $plan->min_deposit }}" class="form-control mb-2">
         </td>
@@ -30,11 +26,7 @@
             <td><b><span id="percent">{{ $plan->return }}</span></b></td>
         </tr>
         <tr>
-            <td>Profit (@if ($plan->max_deposit == null)
-                    &#x20BF;
-                @else
-                    $
-                @endif):</td>
+            <td>Profit:</td>
             <td><b><span id="profit" class="text-success">N/A</span></b></td>
         </tr>
     </table>
@@ -62,7 +54,7 @@
         </div>
     </div>
 
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script>
         let min = parseFloat({{ $plan->min_deposit }});
         let max = parseFloat({{ $plan->max_deposit }});
