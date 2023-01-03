@@ -555,7 +555,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 mt-3">
                     <div class="btc-info" data-aos="fade-left">
                         <div class="btc-info__img">
                             <img src="{{ asset('images/btc/buy/002-bitcoin.svg') }}" alt="">
