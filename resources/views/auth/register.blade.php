@@ -4,7 +4,9 @@
     <h2 class="auth-heading text-center mb-4">Sign up to {{ config('app.name') }}</h2>
 
     <div class="auth-form-container text-start mx-auto">
-        <form class="auth-form auth-signup-form">
+        <form class="auth-form auth-signup-form" method="POST" action="{{ route('register') }}">
+            @csrf
+
             <div class="email mb-3">
                 <label class="sr-only" for="signup-email">Your Name</label>
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror signup-name"
