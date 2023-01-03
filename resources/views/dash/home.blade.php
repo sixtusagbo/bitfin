@@ -1,4 +1,5 @@
 @extends('layouts.dash')
+
 @section('content')
     <h1 class="app-page-title">Overview</h1>
 
