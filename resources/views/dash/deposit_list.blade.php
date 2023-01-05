@@ -1,143 +1,106 @@
 @extends('layouts.dash')
 
 @section('content')
-    <div class="bannerwrap insideheaders">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="bounceInDown wow">Your <span>Deposits</span></h1>
+    <h1 class="app-page-title">Your Deposits</h1>
+
+    <div class="alert alert-info d-flex justify-content-between fs-5">
+        Total: <strong>@money($active_deposits)</strong>
+    </div>
+
+    @forelse ($plans as $plan)
+        <div class="row g-4 mb-4">
+            <div class="col-12 col-lg-12">
+                <div class="app-card h-100 shadow-sm">
+                    <div class="app-card-header p-3">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                {{ $plan->return }}% After
+                                {{ $plan->mining_period / 24 }} Day(s)
+                            </div>
+                            <!--//col-->
+                        </div>
+                        <!--//row-->
+                    </div>
+                    <!--//app-card-header-->
+                    <div class="app-card-body p-3 p-lg-4">
+                        <div class="table-responsive">
+                            <table class="table table-borderless mb-0">
+                                <tbody>
+                                    <tr>
+                                    <tr>
+                                        <td>{{ $plan->name }}</td>
+                                        <td>
+                                            @money($plan->min_deposit) - @if ($plan->max_deposit == null)
+                                                Unlimited
+                                            @else
+                                                @money($plan->max_deposit)
+                                            @endif
+                                        </td>
+                                        <td>{{ $plan->return }}</td>
+                                    </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            @if ($currentUserPayments->where('plan_id', $plan->id)->where('status', '>', 0)->count() > 0)
+                                <div class="table-responsive">
+                                    <table class="table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="meta">DEPOSIT AMOUNT</th>
+                                                <th class="meta stat-cell">PAYMENT CHANNEL</th>
+                                                <th class="meta stat-cell">STATUS</th>
+                                                <th class="meta stat-cell">DATE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($currentUserPayments->where('plan_id', $plan->id)->where('status', '>', 0) as $payment)
+                                                <tr>
+                                                    <td>
+                                                        @money($payment->amount)
+                                                    </td>
+                                                    <td>{{ $payment->wallet->name }}
+                                                    </td>
+                                                    <td>
+                                                        @switch($payment->status)
+                                                            @case(0)
+                                                                <span class="badge text-bg-warning">Pending</span>
+                                                            @break
+
+                                                            @case(1)
+                                                                <span class="badge text-bg-success">Running</span>
+                                                            @break
+
+                                                            @case(2)
+                                                                <span class="badge text-bg-secondary">Completed</span>
+                                                            @break
+
+                                                            @default
+                                                        @endswitch
+                                                    </td>
+                                                    <td>{{ $payment->created_at->toDayDateTimeString() }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <div class="alert alert-info text-center" role="alert">No deposits for this plan
+                                </div>
+                            @endif
+                        </div>
+                        <!--//table-responsive-->
+                    </div>
+                    <!--//app-card-body-->
+
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="accwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    @include('inc.accountnav')
-                </div>
-                <div class="col-lg-9">
-                    <div class="member-container">
-
-
-                        <div class="detailed-stats-box">
-                            Total: <strong>@money($active_deposits)</strong>
-                        </div>
-
-                        @forelse ($plans as $plan)
-                            <div class="my_accont">
-                                <table cellspacing=1 cellpadding=2 border=0 width=100% class=line>
-                                    <tr>
-                                        <td class=item>
-                                            <table cellspacing=1 cellpadding=2 border=0 width=100%>
-                                                <tr>
-                                                    <td colspan=3 align=center>
-                                                        <div class="plan-title">{{ $plan->return }}% After
-                                                            {{ $plan->mining_period / 24 }} Day(s)</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class=inheader>Plan</td>
-                                                    <td class=inheader width=200>Amount Spent (@if ($plan->max_deposit == null)
-                                                            &#x20BF;
-                                                        @else
-                                                            $
-                                                        @endif)</td>
-                                                    <td class=inheader width=100 nowrap>
-                                                        <nobr> Profit (%)</nobr>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class=item>{{ $plan->name }}</td>
-                                                    <td class=item align=right>@money($plan->min_deposit) - @money($plan->max_deposit)</td>
-                                                    <td class=item align=right>{{ $plan->return }}</td>
-                                                </tr>
-                                            </table>
-                                            <br>
-
-                                            @if ($currentUserPayments->count() > 0)
-                                                <table class="">
-                                                    <thead>
-                                                        <tr class="mi-table-info">
-                                                            <th class="ps-4">DEPOSIT AMOUNT</th>
-                                                            <th>PAYMENT CHANNEL</th>
-                                                            <th>STATUS</th>
-                                                            <th>DATE</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-
-                                                        @forelse ($currentUserPayments->where('plan_id', $plan->id)->where('status', '>', 0) as $payment)
-                                                            <tr>
-                                                                <td>
-                                                                    @money($payment->amount)
-                                                                </td>
-                                                                <td>{{ $payment->wallet->name }}
-                                                                </td>
-                                                                <td>
-                                                                    @switch($payment->status)
-                                                                        @case(0)
-                                                                            <span class="btn btn-warning">Pending</span>
-                                                                        @break
-
-                                                                        @case(1)
-                                                                            <span class="btn btn-success">Running</span>
-                                                                        @break
-
-                                                                        @case(2)
-                                                                            <span class="btn btn-default">Completed</span>
-                                                                        @break
-
-                                                                        @default
-                                                                    @endswitch
-                                                                </td>
-                                                                <td>{{ $payment->created_at->toDayDateTimeString() }}
-                                                                </td>
-                                                            </tr>
-                                                            @empty
-                                                                <table cellspacing=1 cellpadding=2 border=0 width=100%>
-                                                                    <tr>
-                                                                        <td colspan=4>
-                                                                            <div class="alert alert-info">No deposits for this
-                                                                                plan
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            @endforelse
-
-                                                        </tbody>
-
-                                                    </table>
-                                                @else
-                                                    <table cellspacing=1 cellpadding=2 border=0 width=100%>
-                                                        <tr>
-                                                            <td colspan=4>
-                                                                <div class="alert alert-info">No deposits for this plan
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                @endif
-                                                <br>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <br>
-                                @empty
-                                    <div class="alert alert-warning" role="alert">
-                                        Admin please run your migrations!
-                                    </div>
-                                @endforelse
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--//row-->
+        @empty
+            <div class="alert alert-warning" role="alert">
+                Admin please run your migrations!
             </div>
-            <div class="strip">&nbsp;</div>
-            <div class="strip">&nbsp;</div>
-        @endsection
+        @endforelse
+    @endsection
