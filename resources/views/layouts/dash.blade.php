@@ -236,7 +236,7 @@
                         <!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link @if (Request::is('profile')) active @endif"
+                            <a class="nav-link @if (Request::is('edit_account')) active @endif"
                                 href="{{ route('profile') }}">
                                 <span class="nav-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
