@@ -120,8 +120,8 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="RememberPassword" required>
                     <label class="form-check-label" for="RememberPassword">
-                        I agree to {{ config('app.name') }}'s <a href="#" class="app-link">Terms of Service</a> and
-                        <a href="#" class="app-link">Privacy Policy</a>.
+                        I agree to {{ config('app.name') }}'s <a href="{{ route('terms') }}" class="app-link">Terms of
+                            Service</a>.
                     </label>
                 </div>
             </div>
