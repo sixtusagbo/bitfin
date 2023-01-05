@@ -87,8 +87,8 @@
                                     <img src="{{ asset('images/auth/accountbox1.png') }}" alt="user profile">
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                    <li><a class="dropdown-item" href="{{ url('/deposit') }}">Deposit Now</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('/edit_account') }}">Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/credits') }}">Deposits</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/debits') }}">Withdrawals</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
