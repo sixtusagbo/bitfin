@@ -61,6 +61,7 @@ class WithdrawalController extends Controller
         $user = User::find($withdrawal->user->id);
 
         $withdrawal->status = $request->input('status');
+        $withdrawal->update();
 
         if ($withdrawal->status == 1) {
             Notification::send($user, new WithdrawalApprovedNotification($withdrawal));
