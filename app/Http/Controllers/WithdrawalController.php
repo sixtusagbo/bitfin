@@ -88,6 +88,6 @@ class WithdrawalController extends Controller
         $withdrawal = Withdrawal::find($id);
         $withdrawal->delete();
 
-        return redirect()->route('credits.index')->with('success', 'Withdrawal deleted successfuly');
+        return redirect()->route('debits.index')->with('success', 'Withdrawal deleted successfuly');
     }
 }
