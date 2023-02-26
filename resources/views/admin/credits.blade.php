@@ -70,7 +70,7 @@
                                         </td>
                                         <td class="item">
                                             <a href="" data-bs-toggle="modal" class="btn btn-info mb-2 me-2"
-                                                data-bs-target="#editPayment{{ $payment->id }}">
+                                                data-bs-target="#edit-payment-{{ $payment->id }}">
                                                 Edit
                                             </a>
                                             <a href="" data-bs-toggle="modal" class="btn btn-danger mb-2"
@@ -80,7 +80,7 @@
                                         </td>
 
                                         <!-- Edit Payment Model -->
-                                        <div class="modal fade" id="editPayment{{ $payment->id }}" tabindex="-1"
+                                        <div class="modal fade" id="edit-payment-{{ $payment->id }}" tabindex="-1"
                                             role="dialog" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -91,10 +91,9 @@
                                                             <i class="ti-close opacity-10 text-info"></i>
                                                         </a>
                                                     </div>
-                                                    <div class="modal-body" id="editPaymentModalBody">
+                                                    <div class="modal-body" id="edit-payment-ModalBody">
                                                         <form class="pt-3" role="form" method="POST"
-                                                            action="{{ route('credits.update', $payment->id) }}"
-                                                            id="editPayment">
+                                                            action="{{ route('credits.update', $payment->id) }}">
                                                             @csrf
 
                                                             <div class="mb-3">

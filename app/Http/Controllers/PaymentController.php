@@ -65,6 +65,7 @@ class PaymentController extends Controller
         $user = User::find($payment->user->id);
 
         $payment->status = $request->input('status');
+        $payment->update();
 
         if ($payment->status == 1) {
             Notification::send($user, new DepositApprovedNotification($payment));
