@@ -57,7 +57,10 @@ class WalletController extends Controller
 
         $wallet = PaymentWallet::find($id);
 
-        $wallet->address = $request->input('address');
+        if ($request->input('address')) {
+            $wallet->address = $request->input('address');
+        }
+        $wallet->update();
 
         return redirect()->route('wallets.index')->with('success', 'Wallet address successfuly updated');
     }

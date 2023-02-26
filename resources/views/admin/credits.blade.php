@@ -78,117 +78,119 @@
                                                 Delete
                                             </a>
                                         </td>
+
+                                        <!-- Edit Payment Model -->
+                                        <div class="modal fade" id="editPayment{{ $payment->id }}" tabindex="-1"
+                                            role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title text-primary">Edit Payment</h4>
+                                                        <a class="close" type="button" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <i class="ti-close opacity-10 text-info"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="modal-body" id="editPaymentModalBody">
+                                                        <form class="pt-3" role="form" method="POST"
+                                                            action="{{ route('credits.update', $payment->id) }}"
+                                                            id="editPayment">
+                                                            @csrf
+
+                                                            <div class="mb-3">
+                                                                <input type="text" class="form-control text-capitalize"
+                                                                    value="{{ $payment->user->username }}" readonly>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <input type="text" class="form-control text-capitalize"
+                                                                    value="{{ $payment->wallet->name }}" readonly>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <input type="text" class="form-control text-capitalize"
+                                                                    value="{{ $payment->plan->name }}" readonly>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <input type="text" class="form-control"
+                                                                    value="@if ($payment->amount < 100) {{ $payment->amount . ' BTC' }}
+                                                                @else {{ '$' . $payment->amount }} @endif"
+                                                                    readonly>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <select name="status" id="" class="form-control">
+
+                                                                    <option value="0"
+                                                                        @if ($payment->status == 0) selected @endif>
+                                                                        Pending
+                                                                    </option>
+                                                                    <option value="1"
+                                                                        @if ($payment->status == 1) selected @endif>
+                                                                        Approved</option>
+                                                                    <option value="2"
+                                                                        @if ($payment->status == 2) selected @endif>
+                                                                        Completed</option>
+                                                                </select>
+                                                            </div>
+                                                            <input type="hidden" name="_method" value="PUT">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Cancel</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary btn-md font-weight-medium auth-form-btn">
+                                                                    Update Payment
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//Edit Payment-->
+
+                                        <!--Delete Payment-->
+                                        <div class="modal fade" id="deletePayment{{ $payment->id }}" tabindex="-1"
+                                            role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title text-primary">Delete Payment</h4>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body" id="deletePaymentModalBody">
+                                                        <p>
+                                                            Are you sure you wish to delete this payment?
+                                                        </p>
+                                                        <form method="POST"
+                                                            action="{{ route('credits.destroy', $payment->id) }}"
+                                                            id="deletePayment">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">No</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-danger btn-md font-weight-medium auth-form-btn">
+                                                                    Yes
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//Delete Payment-->
                                     </tr>
 
-                                    <!-- Edit Payment Model -->
-                                    <div class="modal fade" id="editPayment{{ $payment->id }}" tabindex="-1"
-                                        role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title text-primary">Edit Payment</h4>
-                                                    <a class="close" type="button" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <i class="ti-close opacity-10 text-info"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="modal-body" id="editPaymentModalBody">
-                                                    <form class="pt-3" role="form" method="POST"
-                                                        action="{{ route('credits.update', $payment->id) }}"
-                                                        id="editPayment">
-                                                        @csrf
 
-                                                        <div class="mb-3">
-                                                            <input type="text" class="form-control text-capitalize"
-                                                                value="{{ $payment->user->username }}" readonly>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <input type="text" class="form-control text-capitalize"
-                                                                value="{{ $payment->wallet->name }}" readonly>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <input type="text" class="form-control text-capitalize"
-                                                                value="{{ $payment->plan->name }}" readonly>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <input type="text" class="form-control"
-                                                                value="@if ($payment->amount < 100) {{ $payment->amount . ' BTC' }}
-                                                                @else {{ '$' . $payment->amount }} @endif"
-                                                                readonly>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <select name="status" id="" class="form-control">
-
-                                                                <option value="0"
-                                                                    @if ($payment->status == 0) selected @endif>
-                                                                    Pending
-                                                                </option>
-                                                                <option value="1"
-                                                                    @if ($payment->status == 1) selected @endif>
-                                                                    Approved</option>
-                                                                <option value="2"
-                                                                    @if ($payment->status == 2) selected @endif>
-                                                                    Completed</option>
-                                                            </select>
-                                                        </div>
-                                                        <input type="hidden" name="_method" value="PUT">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Cancel</button>
-                                                            <button type="submit"
-                                                                class="btn btn-primary btn-md font-weight-medium auth-form-btn">
-                                                                Update Payment
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--//Edit Payment-->
-
-                                    <!--Delete Payment-->
-                                    <div class="modal fade" id="deletePayment{{ $payment->id }}" tabindex="-1"
-                                        role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title text-primary">Delete Payment</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body" id="deletePaymentModalBody">
-                                                    <p>
-                                                        Are you sure you wish to delete this payment?
-                                                    </p>
-                                                    <form method="POST"
-                                                        action="{{ route('credits.destroy', $payment->id) }}"
-                                                        id="deletePayment">
-                                                        @csrf
-                                                        <input type="hidden" name="_method" value="DELETE">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">No</button>
-                                                            <button type="submit"
-                                                                class="btn btn-danger btn-md font-weight-medium auth-form-btn">
-                                                                Yes
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--//Delete Payment-->
                                     @empty
                                         <div class="alert alert-warning" role="alert">
                                             Admin please run your migrations!
